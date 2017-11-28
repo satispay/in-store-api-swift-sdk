@@ -1,0 +1,34 @@
+# https://github.com/realm/SwiftLint
+#
+# run on CLI (or as build phase):
+#
+# swiftlint rules / autocorrect / lint (default)
+#
+#
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Packages
+  - Pods
+  - .build
+  - OpenSSL
+  - OpenSSL-Scripts
+
+disabled_rules: # rule identifiers to exclude from running
+- type_body_length
+- function_body_length
+- file_length
+- vertical_parameter_alignment
+- function_parameter_count
+- identifier_name
+- nesting
+- force_cast
+- cyclomatic_complexity
+
+line_length: 150
+
+type_name:
+  min_length: 2
+  max_length: 60
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
