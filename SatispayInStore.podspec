@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SatispayInStore'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Satispay inStore API framework'
   s.description      = <<-DESC
     You can use our API to access Satispay API endpoints, which can get information on received payments, pending ones and manage proposal of payments, besides many other operations.

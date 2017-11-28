@@ -15,7 +15,7 @@ More information about the API can be retrived in their [documentation](https://
 Add the following line to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
 ```
-github "Satispay/SatispayInStore"
+github "Satispay/in-store-api-swift-sdk"
 ```
 
 ### [Cocoapods](https://cocoapods.org)
