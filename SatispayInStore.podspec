@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.vendored_libraries = 'OpenSSL/lib/libcrypto.a', 'OpenSSL/lib/libssl.a'
 
   s.pod_target_xcconfig = {
-      'SWIFT_INCLUDE_PATHS' => File.join(File.dirname(__FILE__), 'SatispayInStore/Modules/iOS/**'),
-      'LIBRARY_SEARCH_PATHS' => File.join(File.dirname(__FILE__), 'OpenSSL/lib'),
+      'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/iOS/**',
+      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib',
       'SWIFT_VERSION' => '4.0'
   }
 
