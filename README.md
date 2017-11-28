@@ -25,7 +25,8 @@ Add the following lines to your [Podfile](https://guides.cocoapods.org/syntax/po
 pod 'SatispayInStore'
 ```
 
-### Copying source files
+### Copying source files
+
 SatispayInStore can also be used just by coping source files from the SatispayInStore framework target into your Xcode project.
 
 ## Usage
