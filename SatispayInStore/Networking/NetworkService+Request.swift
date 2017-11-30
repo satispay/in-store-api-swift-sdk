@@ -32,6 +32,10 @@ extension NetworkService {
             userInfo[NetworkServiceNotificationKey.request] = urlRequest
             userInfo[NetworkServiceNotificationKey.error] = error
 
+            if let httpURLResponse = urlResponse as? HTTPURLResponse {
+                userInfo[NetworkServiceNotificationKey.response] = HTTPResponse(urlResponse: httpURLResponse)
+            }
+
             NotificationCenter.default.post(.init(name: Notification.Name.NetworkService.didComplete,
                                                   object: nil,
                                                   userInfo: userInfo))

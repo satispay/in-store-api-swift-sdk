@@ -36,6 +36,7 @@ extension Notification.Name {
 public struct NetworkServiceNotificationKey {
 
     public static let request = "com.satispay.notification.key.request"
+    public static let response = "com.satispay.notification.key.response"
     public static let error = "com.satispay.notification.key.error"
 
 }
