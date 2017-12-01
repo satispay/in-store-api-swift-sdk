@@ -26,6 +26,7 @@ extension Notification.Name {
         ///
         /// The `userInfo` dictionary constains the following keys:
         /// - `NetworkServiceNotificationKey.request`: `URLRequest`
+        /// - `NetworkServiceNotificationKey.response`: `HTTPResponse`
         /// - `NetworkServiceNotificationKey.error`: if the request completed with an error
         public static let didComplete = Notification.Name(rawValue: "com.satispay.notification.name.task.didComplete")
 
