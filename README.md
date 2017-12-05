@@ -9,6 +9,18 @@ More information about the API can be retrived in their [documentation](https://
 - iOS 8.0+
 - Swift 3.2/4.0
 
+## Example project usage
+
+Clone the repo:
+
+	git clone https://github.com/satispay/in-store-api-swift-sdk
+	
+From the repo root init submodules:
+
+	git submodule update --init --recursive
+	
+Open `SatispayInStore.xcodeproj` and compile.
+
 ## Installation
 
 ### [Carthage](https://github.com/Carthage/Carthage)
