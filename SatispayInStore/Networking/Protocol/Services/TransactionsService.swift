@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
+#endif
 
 public enum TransactionsService {
 
@@ -80,13 +82,19 @@ extension TransactionsService: NetworkService {
 
         var headers: [String: String] = [
             "x-satispay-deviceinfo": analytics.deviceInfo,
-            "x-satispay-os": UIDevice.current.systemName,
-            "x-satispay-osv": UIDevice.current.systemVersion,
             "x-satispay-apph": analytics.softwareHouse,
             "x-satispay-appn": analytics.softwareName,
             "x-satispay-appv": analytics.softwareVersion,
             "x-satispay-devicetype": analytics.deviceType.rawValue
         ]
+
+        #if os(iOS)
+        headers["x-satispay-os"] = UIDevice.current.systemName
+        headers["x-satispay-osv"] = UIDevice.current.systemVersion
+        #elseif os(macOS)
+        headers["x-satispay-os"] = "macOS"
+        headers["x-satispay-osv"] = ProcessInfo.processInfo.operatingSystemVersionString
+        #endif
 
         headers["x-satispay-tracking-code"] = analytics.trackingCode
 

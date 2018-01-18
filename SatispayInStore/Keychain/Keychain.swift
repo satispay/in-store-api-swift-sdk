@@ -49,8 +49,10 @@ public class Keychain {
     public static func delete(descriptor: [String: Any]) {
 
         var searchDescriptor = descriptor
+        #if os(iOS)
         searchDescriptor[String(kSecAttrAccessGroup)] = accessGroup
         searchDescriptor[String(kSecAttrAccessible)] = nil
+        #endif
 
         performAtomically {
             SecItemDelete(searchDescriptor as CFDictionary)
@@ -84,13 +86,17 @@ public class Keychain {
                 kSecAttrAccount as String: entry.account
             ]
 
+            #if os(iOS)
             searchAttributes[String(kSecAttrAccessGroup)] = accessGroup
+            #endif
 
             var updateAttributes: [String: Any] = [
                 kSecValueData as String: data
             ]
 
+            #if os(iOS)
             updateAttributes[String(kSecAttrAccessGroup)] = Keychain.accessGroup
+            #endif
 
             performAtomically {
                 status = SecItemUpdate(searchAttributes as CFDictionary,
@@ -101,7 +107,9 @@ public class Keychain {
 
             var descriptor = entry.descriptor
             descriptor[kSecValueData as String] = data as AnyObject
+            #if os(iOS)
             descriptor[String(kSecAttrAccessGroup)] = accessGroup
+            #endif
 
             performAtomically {
                 status = SecItemAdd(descriptor as CFDictionary, nil)
@@ -153,7 +161,9 @@ public class Keychain {
         var status: OSStatus = errSecSuccess
 
         var searchDescriptor = descriptor
+        #if os(iOS)
         searchDescriptor[String(kSecAttrAccessGroup)] = accessGroup
+        #endif
 
         performAtomically {
             status = SecItemCopyMatching(searchDescriptor as CFDictionary, &object)

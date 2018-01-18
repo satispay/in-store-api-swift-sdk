@@ -117,6 +117,90 @@
 		E8C75FE41FC6BCFA001B5E7A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C75FE11FC6BCFA001B5E7A /* RootViewController.swift */; };
 		E8C75FE51FC6BCFA001B5E7A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C75FE21FC6BCFA001B5E7A /* MainViewController.swift */; };
 		E8DE9C3D1FBDC87B00B094D2 /* NetworkService+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE9C3C1FBDC87B00B094D2 /* NetworkService+Notification.swift */; };
+		E8E3447E2010BF330049385F /* SatispayInStore_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = E8E3447C2010BF330049385F /* SatispayInStore_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8E344822010C4550049385F /* SatispayInStoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991931FB2F5930079FBDE /* SatispayInStoreConfig.swift */; };
+		E8E344832010C4550049385F /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F3C1FB3436400B20F93 /* EnvironmentConfig.swift */; };
+		E8E344842010C4550049385F /* EnvironmentKeychainConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815C7E71FC31905002B7246 /* EnvironmentKeychainConfig.swift */; };
+		E8E344852010C4550049385F /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F3E1FB343A600B20F93 /* Environments.swift */; };
+		E8E344862010C45C0049385F /* CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */; };
+		E8E344872010C4620049385F /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059851FB45A8E005E8DD6 /* BigInteger.swift */; };
+		E8E344882010C4660049385F /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F1E1FB342E700B20F93 /* AES.swift */; };
+		E8E344892010C4660049385F /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F261FB342E700B20F93 /* CryptoError.swift */; };
+		E8E3448A2010C4660049385F /* KeyDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F271FB342E700B20F93 /* KeyDerivation.swift */; };
+		E8E3448B2010C4660049385F /* OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F221FB342E700B20F93 /* OTP.swift */; };
+		E8E3448C2010C4660049385F /* RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F1D1FB342E700B20F93 /* RSA.swift */; };
+		E8E3448D2010C46A0049385F /* DHParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F211FB342E700B20F93 /* DHParams.swift */; };
+		E8E3448E2010C46A0049385F /* DHError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F651FB3788600B20F93 /* DHError.swift */; };
+		E8E3448F2010C46D0049385F /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F241FB342E700B20F93 /* Hash.swift */; };
+		E8E344902010C46D0049385F /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F251FB342E700B20F93 /* HMAC.swift */; };
+		E8E344912010C4710049385F /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F2C1FB342E700B20F93 /* Keychain.swift */; };
+		E8E344922010C4710049385F /* Keychain+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F2A1FB342E700B20F93 /* Keychain+Keys.swift */; };
+		E8E344932010C4710049385F /* Keychain+Overloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F2D1FB342E700B20F93 /* Keychain+Overloads.swift */; };
+		E8E344942010C4710049385F /* KeychainEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F2B1FB342E700B20F93 /* KeychainEntry.swift */; };
+		E8E344952010C4710049385F /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F291FB342E700B20F93 /* KeychainError.swift */; };
+		E8E344962010C4740049385F /* DispatchWorkItem+CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800598A1FB45DD9005E8DD6 /* DispatchWorkItem+CancellableOperation.swift */; };
+		E8E344972010C4740049385F /* JSONDecoder+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93611FB2275700E80816 /* JSONDecoder+Defaults.swift */; };
+		E8E344982010C4740049385F /* JSONEncoder+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93601FB2275700E80816 /* JSONEncoder+Defaults.swift */; };
+		E8E344992010C4740049385F /* NetworkService+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE9C3C1FBDC87B00B094D2 /* NetworkService+Notification.swift */; };
+		E8E3449A2010C4780049385F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93681FB228E600E80816 /* Profile.swift */; };
+		E8E3449B2010C4780049385F /* Profile+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93671FB228E600E80816 /* Profile+Device.swift */; };
+		E8E3449C2010C4780049385F /* Profile+Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93661FB228E600E80816 /* Profile+Shop.swift */; };
+		E8E3449D2010C4780049385F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E935D1FB225B700E80816 /* Transaction.swift */; };
+		E8E3449E2010C47B0049385F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991991FB300CA0079FBDE /* HTTPMethod.swift */; };
+		E8E3449F2010C47B0049385F /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F401FB363BC00B20F93 /* HTTPRequest.swift */; };
+		E8E344A02010C47B0049385F /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B286BE1FD05A18004013F4 /* HTTPResponse.swift */; };
+		E8E344A12010C47B0049385F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93021FB20A1100E80816 /* NetworkService.swift */; };
+		E8E344A22010C47B0049385F /* NetworkService+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FF3F51FB5F0CB00DAB089 /* NetworkService+Error.swift */; };
+		E8E344A32010C47B0049385F /* NetworkService+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F421FB364F300B20F93 /* NetworkService+Request.swift */; };
+		E8E344A42010C47E0049385F /* ProtocolError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E71FB20A1100E80816 /* ProtocolError.swift */; };
+		E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F151FB342C200B20F93 /* ProtocolRequestSigner.swift */; };
+		E8E344A62010C47E0049385F /* ProtocolRequestSignerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F121FB342C200B20F93 /* ProtocolRequestSignerError.swift */; };
+		E8E344A72010C47E0049385F /* ProtocolResponseVerifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F161FB342C200B20F93 /* ProtocolResponseVerifier.swift */; };
+		E8E344A82010C47E0049385F /* ProtocolResponseVerifierError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F131FB342C200B20F93 /* ProtocolResponseVerifierError.swift */; };
+		E8E344A92010C4850049385F /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F21FB20A1100E80816 /* AnalyticsController.swift */; };
+		E8E344AA2010C4850049385F /* DailyClosureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EA1FB20A1100E80816 /* DailyClosureController.swift */; };
+		E8E344AB2010C4850049385F /* DevicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F31FB20A1100E80816 /* DevicesController.swift */; };
+		E8E344AC2010C4850049385F /* DHController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F71FB20A1100E80816 /* DHController.swift */; };
+		E8E344AD2010C4850049385F /* DHController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059781FB44D8C005E8DD6 /* DHController+Context.swift */; };
+		E8E344AE2010C4850049385F /* DHController+Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F51FB20A1100E80816 /* DHController+Challenge.swift */; };
+		E8E344AF2010C4850049385F /* DHController+Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92ED1FB20A1100E80816 /* DHController+Exchange.swift */; };
+		E8E344B02010C4850049385F /* DHController+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F61FB20A1100E80816 /* DHController+Parameters.swift */; };
+		E8E344B22010C4850049385F /* DHController+Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EE1FB20A1100E80816 /* DHController+Verification.swift */; };
+		E8E344B32010C4850049385F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EC1FB20A1100E80816 /* NetworkController.swift */; };
+		E8E344B42010C4850049385F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F11FB20A1100E80816 /* ProfileController.swift */; };
+		E8E344B52010C4850049385F /* ShopsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F41FB20A1100E80816 /* ShopsController.swift */; };
+		E8E344B62010C4850049385F /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F01FB20A1100E80816 /* TransactionsController.swift */; };
+		E8E344B72010C4850049385F /* TransactionsController+List.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F81FB20A1100E80816 /* TransactionsController+List.swift */; };
+		E8E344B82010C4850049385F /* TransactionsController+UpdateState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EB1FB20A1100E80816 /* TransactionsController+UpdateState.swift */; };
+		E8E344B92010C4850049385F /* TransactionsController+Refund.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86951FC81B1600C705B0 /* TransactionsController+Refund.swift */; };
+		E8E344BA2010C48A0049385F /* DailyClosureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D31FB20A1100E80816 /* DailyClosureResponse.swift */; };
+		E8E344BB2010C48A0049385F /* DeviceUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E51FB20A1100E80816 /* DeviceUpdateRequest.swift */; };
+		E8E344BC2010C48A0049385F /* DHChallengeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D91FB20A1100E80816 /* DHChallengeRequest.swift */; };
+		E8E344BD2010C48A0049385F /* DHChallengeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DD1FB20A1100E80816 /* DHChallengeResponse.swift */; };
+		E8E344BE2010C48A0049385F /* DHEncryptedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D61FB20A1100E80816 /* DHEncryptedRequest.swift */; };
+		E8E344BF2010C48A0049385F /* DHEncryptedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E01FB20A1100E80816 /* DHEncryptedResponse.swift */; };
+		E8E344C02010C48A0049385F /* DHExchangeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DC1FB20A1100E80816 /* DHExchangeRequest.swift */; };
+		E8E344C12010C48A0049385F /* DHExchangeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DE1FB20A1100E80816 /* DHExchangeResponse.swift */; };
+		E8E344C22010C48A0049385F /* DHVerificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DF1FB20A1100E80816 /* DHVerificationRequest.swift */; };
+		E8E344C32010C48A0049385F /* DHVerificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E21FB20A1100E80816 /* DHVerificationResponse.swift */; };
+		E8E344C42010C48A0049385F /* PaginatedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E31FB20A1100E80816 /* PaginatedResponse.swift */; };
+		E8E344C52010C48A0049385F /* ServerErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DA1FB20A1100E80816 /* ServerErrorResponse.swift */; };
+		E8E344C62010C48A0049385F /* ShopLocationUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D71FB20A1100E80816 /* ShopLocationUpdateRequest.swift */; };
+		E8E344C72010C48A0049385F /* StartedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E41FB20A1100E80816 /* StartedRequest.swift */; };
+		E8E344C82010C48A0049385F /* StartedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E11FB20A1100E80816 /* StartedResponse.swift */; };
+		E8E344C92010C48A0049385F /* TransactionRefundResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86931FC81AA300C705B0 /* TransactionRefundResponse.swift */; };
+		E8E344CA2010C48A0049385F /* TransactionsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D81FB20A1100E80816 /* TransactionsListRequest.swift */; };
+		E8E344CB2010C48A0049385F /* TransactionStateUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DB1FB20A1100E80816 /* TransactionStateUpdateRequest.swift */; };
+		E8E344CC2010C48A0049385F /* TransactionStateUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D51FB20A1100E80816 /* TransactionStateUpdateResponse.swift */; };
+		E8E344CD2010C48A0049385F /* UpdateDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F5F1FB3733C00B20F93 /* UpdateDeviceResponse.swift */; };
+		E8E344CE2010C48A0049385F /* UpdateLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F671FB3799200B20F93 /* UpdateLocationResponse.swift */; };
+		E8E344CF2010C48E0049385F /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FF1FB20A1100E80816 /* AnalyticsService.swift */; };
+		E8E344D02010C48E0049385F /* DailyClosureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FE1FB20A1100E80816 /* DailyClosureService.swift */; };
+		E8E344D12010C48E0049385F /* DevicesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FC1FB20A1100E80816 /* DevicesService.swift */; };
+		E8E344D22010C48E0049385F /* DHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93011FB20A1100E80816 /* DHService.swift */; };
+		E8E344D32010C48E0049385F /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FD1FB20A1100E80816 /* ProfileService.swift */; };
+		E8E344D42010C48E0049385F /* ShopsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93001FB20A1100E80816 /* ShopsService.swift */; };
+		E8E344D52010C48E0049385F /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FA1FB20A1100E80816 /* TransactionsService.swift */; };
 		E8F02F471FC732940090F7DE /* SatispayInStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -238,6 +322,9 @@
 		E8C75FE11FC6BCFA001B5E7A /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E8C75FE21FC6BCFA001B5E7A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E8DE9C3C1FBDC87B00B094D2 /* NetworkService+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Notification.swift"; sourceTree = "<group>"; };
+		E8E3447A2010BF330049385F /* SatispayInStore_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SatispayInStore_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E3447C2010BF330049385F /* SatispayInStore_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SatispayInStore_macOS.h; sourceTree = "<group>"; };
+		E8E3447D2010BF330049385F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +342,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8F02F471FC732940090F7DE /* SatispayInStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E344762010BF330049385F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E84E92B91FB203A700E80816 /* SatispayInStore */,
+				E8E3447B2010BF330049385F /* SatispayInStore-macOS */,
 				E8C75FCB1FC6BC90001B5E7A /* Example */,
 				E84E92B81FB203A700E80816 /* Products */,
 				E80059A41FB46CAF005E8DD6 /* Frameworks */,
@@ -317,6 +412,7 @@
 			children = (
 				E84E92B71FB203A700E80816 /* SatispayInStore.framework */,
 				E8C75FCA1FC6BC90001B5E7A /* Example.app */,
+				E8E3447A2010BF330049385F /* SatispayInStore_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -527,6 +623,15 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		E8E3447B2010BF330049385F /* SatispayInStore-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				E8E3447C2010BF330049385F /* SatispayInStore_macOS.h */,
+				E8E3447D2010BF330049385F /* Info.plist */,
+			);
+			path = "SatispayInStore-macOS";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -535,6 +640,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84E92BC1FB203A700E80816 /* SatispayInStore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E344772010BF330049385F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E3447E2010BF330049385F /* SatispayInStore_macOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +708,24 @@
 			productReference = E8C75FCA1FC6BC90001B5E7A /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E8E344792010BF330049385F /* SatispayInStore-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8E344812010BF330049385F /* Build configuration list for PBXNativeTarget "SatispayInStore-macOS" */;
+			buildPhases = (
+				E8E344752010BF330049385F /* Sources */,
+				E8E344762010BF330049385F /* Frameworks */,
+				E8E344772010BF330049385F /* Headers */,
+				E8E344782010BF330049385F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SatispayInStore-macOS";
+			productName = "SatispayInStore-macOS";
+			productReference = E8E3447A2010BF330049385F /* SatispayInStore_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -621,6 +752,10 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Manual;
 					};
+					E8E344792010BF330049385F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = E84E92B11FB203A700E80816 /* Build configuration list for PBXProject "SatispayInStore" */;
@@ -637,6 +772,7 @@
 			projectRoot = "";
 			targets = (
 				E84E92B61FB203A700E80816 /* SatispayInStore-iOS */,
+				E8E344792010BF330049385F /* SatispayInStore-macOS */,
 				E80059991FB46A68005E8DD6 /* OpenSSL */,
 				E84923D51FC58F500037C6CD /* Linting */,
 				E8C75FC91FC6BC90001B5E7A /* Example */,
@@ -659,6 +795,13 @@
 				E8C75FD71FC6BC90001B5E7A /* LaunchScreen.storyboard in Resources */,
 				E8C75FD41FC6BC90001B5E7A /* Assets.xcassets in Resources */,
 				E8C75FD21FC6BC90001B5E7A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E344782010BF330049385F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +926,96 @@
 				E83A869D1FC82C9A00C705B0 /* UIDevice+Model.swift in Sources */,
 				E8C75FE41FC6BCFA001B5E7A /* RootViewController.swift in Sources */,
 				E8C75FCD1FC6BC90001B5E7A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E344752010BF330049385F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E344CE2010C48A0049385F /* UpdateLocationResponse.swift in Sources */,
+				E8E344C62010C48A0049385F /* ShopLocationUpdateRequest.swift in Sources */,
+				E8E344BE2010C48A0049385F /* DHEncryptedRequest.swift in Sources */,
+				E8E344CC2010C48A0049385F /* TransactionStateUpdateResponse.swift in Sources */,
+				E8E344A92010C4850049385F /* AnalyticsController.swift in Sources */,
+				E8E344B82010C4850049385F /* TransactionsController+UpdateState.swift in Sources */,
+				E8E344B92010C4850049385F /* TransactionsController+Refund.swift in Sources */,
+				E8E344BA2010C48A0049385F /* DailyClosureResponse.swift in Sources */,
+				E8E344972010C4740049385F /* JSONDecoder+Defaults.swift in Sources */,
+				E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */,
+				E8E344BD2010C48A0049385F /* DHChallengeResponse.swift in Sources */,
+				E8E344842010C4550049385F /* EnvironmentKeychainConfig.swift in Sources */,
+				E8E3448A2010C4660049385F /* KeyDerivation.swift in Sources */,
+				E8E344992010C4740049385F /* NetworkService+Notification.swift in Sources */,
+				E8E344CF2010C48E0049385F /* AnalyticsService.swift in Sources */,
+				E8E344AA2010C4850049385F /* DailyClosureController.swift in Sources */,
+				E8E3448E2010C46A0049385F /* DHError.swift in Sources */,
+				E8E344962010C4740049385F /* DispatchWorkItem+CancellableOperation.swift in Sources */,
+				E8E3448C2010C4660049385F /* RSA.swift in Sources */,
+				E8E344D12010C48E0049385F /* DevicesService.swift in Sources */,
+				E8E344C02010C48A0049385F /* DHExchangeRequest.swift in Sources */,
+				E8E344872010C4620049385F /* BigInteger.swift in Sources */,
+				E8E344932010C4710049385F /* Keychain+Overloads.swift in Sources */,
+				E8E344D02010C48E0049385F /* DailyClosureService.swift in Sources */,
+				E8E344C92010C48A0049385F /* TransactionRefundResponse.swift in Sources */,
+				E8E344D32010C48E0049385F /* ProfileService.swift in Sources */,
+				E8E344A72010C47E0049385F /* ProtocolResponseVerifier.swift in Sources */,
+				E8E344BC2010C48A0049385F /* DHChallengeRequest.swift in Sources */,
+				E8E344CA2010C48A0049385F /* TransactionsListRequest.swift in Sources */,
+				E8E344AD2010C4850049385F /* DHController+Context.swift in Sources */,
+				E8E3449C2010C4780049385F /* Profile+Shop.swift in Sources */,
+				E8E344A12010C47B0049385F /* NetworkService.swift in Sources */,
+				E8E344D22010C48E0049385F /* DHService.swift in Sources */,
+				E8E344942010C4710049385F /* KeychainEntry.swift in Sources */,
+				E8E344B52010C4850049385F /* ShopsController.swift in Sources */,
+				E8E344AE2010C4850049385F /* DHController+Challenge.swift in Sources */,
+				E8E344AF2010C4850049385F /* DHController+Exchange.swift in Sources */,
+				E8E344A42010C47E0049385F /* ProtocolError.swift in Sources */,
+				E8E344912010C4710049385F /* Keychain.swift in Sources */,
+				E8E344C32010C48A0049385F /* DHVerificationResponse.swift in Sources */,
+				E8E344D42010C48E0049385F /* ShopsService.swift in Sources */,
+				E8E344AC2010C4850049385F /* DHController.swift in Sources */,
+				E8E344852010C4550049385F /* Environments.swift in Sources */,
+				E8E344B72010C4850049385F /* TransactionsController+List.swift in Sources */,
+				E8E344AB2010C4850049385F /* DevicesController.swift in Sources */,
+				E8E344C42010C48A0049385F /* PaginatedResponse.swift in Sources */,
+				E8E344A82010C47E0049385F /* ProtocolResponseVerifierError.swift in Sources */,
+				E8E3448D2010C46A0049385F /* DHParams.swift in Sources */,
+				E8E3449D2010C4780049385F /* Transaction.swift in Sources */,
+				E8E344BF2010C48A0049385F /* DHEncryptedResponse.swift in Sources */,
+				E8E344CD2010C48A0049385F /* UpdateDeviceResponse.swift in Sources */,
+				E8E344C22010C48A0049385F /* DHVerificationRequest.swift in Sources */,
+				E8E344862010C45C0049385F /* CancellableOperation.swift in Sources */,
+				E8E344822010C4550049385F /* SatispayInStoreConfig.swift in Sources */,
+				E8E3449E2010C47B0049385F /* HTTPMethod.swift in Sources */,
+				E8E344B32010C4850049385F /* NetworkController.swift in Sources */,
+				E8E344A62010C47E0049385F /* ProtocolRequestSignerError.swift in Sources */,
+				E8E344882010C4660049385F /* AES.swift in Sources */,
+				E8E344C72010C48A0049385F /* StartedRequest.swift in Sources */,
+				E8E344B22010C4850049385F /* DHController+Verification.swift in Sources */,
+				E8E3449A2010C4780049385F /* Profile.swift in Sources */,
+				E8E344C52010C48A0049385F /* ServerErrorResponse.swift in Sources */,
+				E8E344832010C4550049385F /* EnvironmentConfig.swift in Sources */,
+				E8E344A32010C47B0049385F /* NetworkService+Request.swift in Sources */,
+				E8E344982010C4740049385F /* JSONEncoder+Defaults.swift in Sources */,
+				E8E344B02010C4850049385F /* DHController+Parameters.swift in Sources */,
+				E8E344C12010C48A0049385F /* DHExchangeResponse.swift in Sources */,
+				E8E344902010C46D0049385F /* HMAC.swift in Sources */,
+				E8E344892010C4660049385F /* CryptoError.swift in Sources */,
+				E8E344A02010C47B0049385F /* HTTPResponse.swift in Sources */,
+				E8E344A22010C47B0049385F /* NetworkService+Error.swift in Sources */,
+				E8E3449B2010C4780049385F /* Profile+Device.swift in Sources */,
+				E8E344952010C4710049385F /* KeychainError.swift in Sources */,
+				E8E3448B2010C4660049385F /* OTP.swift in Sources */,
+				E8E344BB2010C48A0049385F /* DeviceUpdateRequest.swift in Sources */,
+				E8E344CB2010C48A0049385F /* TransactionStateUpdateRequest.swift in Sources */,
+				E8E3449F2010C47B0049385F /* HTTPRequest.swift in Sources */,
+				E8E3448F2010C46D0049385F /* Hash.swift in Sources */,
+				E8E344922010C4710049385F /* Keychain+Keys.swift in Sources */,
+				E8E344B62010C4850049385F /* TransactionsController.swift in Sources */,
+				E8E344C82010C48A0049385F /* StartedResponse.swift in Sources */,
+				E8E344D52010C48E0049385F /* TransactionsService.swift in Sources */,
+				E8E344B42010C4850049385F /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,6 +1314,68 @@
 			};
 			name = Release;
 		};
+		E8E3447F2010BF330049385F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3KU6KJU4K4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/macOS";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E8E344802010BF330049385F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3KU6KJU4K4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = /usr/local/opt/openssl/include;
+				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-lssl",
+					"-lcrypto",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/macOS";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1125,6 +1420,15 @@
 			buildConfigurations = (
 				E8C75FD91FC6BC91001B5E7A /* Debug */,
 				E8C75FDA1FC6BC91001B5E7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8E344812010BF330049385F /* Build configuration list for PBXNativeTarget "SatispayInStore-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E3447F2010BF330049385F /* Debug */,
+				E8E344802010BF330049385F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

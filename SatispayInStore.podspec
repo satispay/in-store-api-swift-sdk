@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SatispayInStore'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'Satispay inStore API framework'
   s.description      = <<-DESC
     You can use our API to access Satispay API endpoints, which can get information on received payments, pending ones and manage proposal of payments, besides many other operations.
@@ -12,15 +12,23 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/satispay/in-store-api-swift-sdk.git', :tag => s.version.to_s, :submodules => true }
 
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.10'
 
   s.source_files = 'SatispayInStore/**/*.swift'
   s.preserve_paths = 'SatispayInStore/Modules/**/*', 'OpenSSL/lib/*.a'
   s.libraries  = 'crypto', 'ssl'
-  s.vendored_libraries = 'OpenSSL/lib/libcrypto.a', 'OpenSSL/lib/libssl.a'
+  s.ios.vendored_libraries = 'OpenSSL/lib/libcrypto.a', 'OpenSSL/lib/libssl.a'
 
-  s.pod_target_xcconfig = {
+  s.ios.pod_target_xcconfig = {
       'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/iOS/**',
       'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib',
+      'SWIFT_VERSION' => '4.0'
+  }
+
+  s.osx.pod_target_xcconfig = {
+      'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/macOS/**',
+      'LIBRARY_SEARCH_PATHS' => '/usr/local/opt/openssl/lib',
+      'HEADER_SEARCH_PATHS' => '/usr/local/opt/openssl/include',
       'SWIFT_VERSION' => '4.0'
   }
 

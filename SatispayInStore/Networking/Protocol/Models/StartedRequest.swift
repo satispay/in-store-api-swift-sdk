@@ -7,7 +7,7 @@
 //
 
 import CoreLocation
-import UIKit
+import Foundation
 
 public struct StartedRequest: Encodable {
 
