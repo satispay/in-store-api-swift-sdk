@@ -43,6 +43,8 @@ public class RSA {
 
      - returns: Encrypted data
      */
+    #if os(iOS)
+
     public static func encrypt(data: Data, using key: Keychain.KeyEntry) throws -> Data {
 
         let keyRef = try Keychain.find(entry: key)
@@ -54,13 +56,14 @@ public class RSA {
         var result = errSecSuccess
 
         data.withUnsafeBytes { (dataPointer) -> Void in
-            encryptedData.withUnsafeMutableBytes { (encryptedDataPointer) -> Void in
-                result = SecKeyEncrypt(keyRef,
-                                       .PKCS1,
-                                       dataPointer,
-                                       data.count,
-                                       encryptedDataPointer,
-                                       &encryptedDataLength)
+            encryptedData.withUnsafeMutableBytes { (encryptedDataPointer: UnsafeMutablePointer<UInt8>) -> Void in
+                    result = SecKeyEncrypt(keyRef,
+                                           .PKCS1,
+                                           dataPointer,
+                                           data.count,
+                                           encryptedDataPointer,
+                                           &encryptedDataLength)
+
             }
         }
 
@@ -71,5 +74,43 @@ public class RSA {
         return Data(encryptedData.prefix(upTo: encryptedDataLength))
 
     }
+
+    #elseif os(macOS)
+
+    public static func encrypt(data: Data, using key: Keychain.KeyEntry) throws -> Data {
+
+        let parameters = [
+            String(kSecAttrKeyType): kSecAttrKeyTypeRSA as String,
+            String(kSecAttrKeyClass): kSecAttrKeyClassPublic as String
+        ] as CFDictionary
+
+        guard let wallyPublicKey = Data(base64Encoded: SatispayInStoreConfig.environment.publicKey, options: .ignoreUnknownCharacters) else {
+            throw CryptoError.encryptionFailure(errSecInvalidKeyBlob)
+        }
+
+        guard let key = SecKeyCreateFromData(parameters, wallyPublicKey as CFData, nil) else {
+            throw CryptoError.encryptionFailure(errSecInvalidKeyRef)
+        }
+
+        var error: Unmanaged<CFError>?
+        let transform = SecEncryptTransformCreate(key, &error)
+
+        guard error == nil else {
+            throw CryptoError.encryptionFailure(errSecAllocate)
+        }
+
+        guard SecTransformSetAttribute(transform, kSecTransformInputAttributeName, data as CFTypeRef, nil) else {
+            throw CryptoError.encryptionFailure(errSecParam)
+        }
+
+        guard let data = SecTransformExecute(transform, &error) as? Data else {
+            throw CryptoError.encryptionFailure(errSecInvalidData)
+        }
+
+        return data
+
+    }
+
+    #endif
 
 }

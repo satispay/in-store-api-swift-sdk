@@ -21,3 +21,4 @@ Build/*
 *.xcodeproj/xcuserdata
 screenshots
 */Modules/iOS/OpenSSL/openssl/
+*/Modules/macOS/OpenSSL/openssl/

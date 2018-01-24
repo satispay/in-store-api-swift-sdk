@@ -84,10 +84,14 @@ public class BigInteger {
 
         let representation = BN_dup(number.representation)
 
-        #if arch(x86_64)
-        BN_add_word(representation, UInt(increment))
+        #if os(iOS)
+            #if arch(x86_64)
+                BN_add_word(representation, UInt(increment))
+            #else
+                BN_add_word(representation, increment)
+            #endif
         #else
-        BN_add_word(representation, increment)
+            BN_add_word(representation, UInt(increment))
         #endif
 
         return BigInteger(representation!)

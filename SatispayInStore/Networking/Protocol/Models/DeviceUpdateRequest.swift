@@ -6,7 +6,11 @@
 //  Copyright © 2017 Satispay. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 public struct DeviceUpdateRequest: Encodable {
 
@@ -31,7 +35,12 @@ public struct DeviceUpdateRequest: Encodable {
     public init(pushToken token: String?) {
 
         appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
+
+        #if os(iOS)
         osVersion = UIDevice.current.systemVersion
+        #else
+        osVersion = ProcessInfo.processInfo.operatingSystemVersionString
+        #endif
 
         #if DEBUG
         environment = "SANDBOX"
