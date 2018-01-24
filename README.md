@@ -6,7 +6,7 @@ More information about the API can be retrived in their [documentation](https://
 
 ## Requirements
 
-- iOS 8.0+
+- iOS 8.0+ or macOS 10.10+
 - Swift 3.2/4.0
 
 ## Example project usage
