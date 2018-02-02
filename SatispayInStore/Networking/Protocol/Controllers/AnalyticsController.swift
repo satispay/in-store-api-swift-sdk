@@ -16,11 +16,13 @@ public class AnalyticsController: NetworkController {
     /// - Parameters:
     ///   - udid: Unique identifier of the device (if any).
     ///   - language: ISO-639 language code.
+    ///   - deviceInfo: Device model name.
     public func started(udid: String?,
                         language: String = Locale.current.languageCode ?? "en",
+                        deviceInfo: String,
                         completionHandler: @escaping CompletionHandler<StartedResponse>) -> CancellableOperation {
 
-        let request = StartedRequest(udid: udid, language: language)
+        let request = StartedRequest(udid: udid, language: language, deviceInfo: deviceInfo)
 
         return AnalyticsService.started(request: request).request { (response: StartedResponse?, _, error) in
 
