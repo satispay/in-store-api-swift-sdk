@@ -1,4 +1,4 @@
 [submodule "OpenSSL"]
 	path = OpenSSL
-	url = https://github.com/x2on/OpenSSL-for-iPhone.git
-	ignore = dirty
+	url = https://github.com/pNre/OpenSSL
+        ignore = dirty

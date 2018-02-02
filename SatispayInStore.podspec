@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SatispayInStore'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'Satispay inStore API framework'
   s.description      = <<-DESC
     You can use our API to access Satispay API endpoints, which can get information on received payments, pending ones and manage proposal of payments, besides many other operations.
@@ -15,49 +15,40 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
 
   s.source_files = 'SatispayInStore/**/*.swift'
-  s.preserve_paths = 'SatispayInStore/Modules/**/*', 'OpenSSL/lib/*.a'
+  s.preserve_paths = 'SatispayInStore/Modules/**/*', 'OpenSSL/lib-ios/*.a', 'OpenSSL/lib-macos/*.a'
   s.libraries  = 'crypto', 'ssl'
-  s.ios.vendored_libraries = 'OpenSSL/lib/libcrypto.a', 'OpenSSL/lib/libssl.a'
+  s.ios.vendored_libraries = 'OpenSSL/lib-ios/libcrypto.a', 'OpenSSL/lib-ios/libssl.a'
+  s.osx.vendored_libraries = 'OpenSSL/lib-macos/libcrypto.a', 'OpenSSL/lib-macos/libssl.a'
 
   s.ios.pod_target_xcconfig = {
       'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/iOS/**',
-      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib',
+      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib-ios',
       'SWIFT_VERSION' => '4.0'
-  }
-
-  s.osx.xcconfig = {
-      'LIBRARY_SEARCH_PATHS' => '/usr/local/opt/openssl/lib',
-      'HEADER_SEARCH_PATHS' => '/usr/local/opt/openssl/include',
   }
 
   s.osx.pod_target_xcconfig = {
       'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/macOS/**',
-      'LIBRARY_SEARCH_PATHS' => '/usr/local/opt/openssl/lib',
-      'HEADER_SEARCH_PATHS' => '/usr/local/opt/openssl/include',
+      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib-macos',
       'SWIFT_VERSION' => '4.0'
   }
 
   s.prepare_command = <<-CMD
       BASE_PATH="${PWD}"
       OPENSSL_PATH="$BASE_PATH/OpenSSL"
-      MODULE_PATH="$BASE_PATH/SatispayInStore/Modules/iOS/OpenSSL"
+      MODULE_PATH_IOS="$BASE_PATH/SatispayInStore/Modules/iOS/OpenSSL"
+      MODULE_PATH_MACOS="$BASE_PATH/SatispayInStore/Modules/macOS/OpenSSL"
 
       cd "$OPENSSL_PATH"
 
-      if [ -f lib/libssl.a ] && [ -f lib/libcrypto.a ] && [ -d "$MODULE_PATH/openssl" ]; then
+      if [ -f lib-ios/libssl.a ] && [ -f lib-ios/libcrypto.a ] && [ -f lib-macos/libssl.a ] && [ -f lib-macos/libcrypto.a ] && [ -d "$MODULE_PATH_IOS/openssl" ] && [ -d "$MODULE_PATH_MACOS/openssl" ]; then
           exit 0
       fi
 
-      OPTIONS="no-ssl2 no-ssl3 no-comp no-async no-psk no-srp no-dtls no-dtls1"
-      OPTIONS+=" no-ec no-ec2m no-engine no-hw no-err"
-      OPTIONS+=" no-bf no-blake2 no-camellia no-cast no-chacha no-cmac no-ecdh no-ecdsa no-idea no-md4 no-mdc2 no-ocb no-poly1305 no-rc2 no-rc4 no-rmd160 no-scrpyt no-seed no-siphash no-sm3 no-sm4 no-whirlpool"
-      OPTIONS+=" -Wno-error=ignored-optimization-argument"
+      ./build.sh
 
-      export CONFIG_OPTIONS="$OPTIONS"
-
-      ./build-libssl.sh --archs="x86_64 i386 arm64 armv7" --version="1.0.2m"
-
-      mkdir -p $MODULE_PATH
-      cp -R "$OPENSSL_PATH/include/openssl" "$MODULE_PATH/"
+      mkdir -p $MODULE_PATH_IOS
+      mkdir -p $MODULE_PATH_MACOS
+      cp -R "$OPENSSL_PATH/include-ios/openssl" "$MODULE_PATH_IOS/"
+      cp -R "$OPENSSL_PATH/include-macos/openssl" "$MODULE_PATH_MACOS/"
   CMD
 end
