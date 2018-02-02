@@ -69,6 +69,7 @@ extension TransactionsListRequest.Analytics {
 
         case tablet = "TABLET"
         case smartphone = "SMARTPHONE"
+        case pc = "PC"
         case cashRegister = "CASH-REGISTER"
 
     }
