@@ -124,7 +124,7 @@ struct ProtocolResponseVerifier {
         //  Update the sequence number
         var currentSequence = sequenceNumber
 
-        if let sequenceString = auth["satispaysequence"], let sequence = Int(sequenceString) {
+        if let sequenceString = auth["satispaysequence"], let sequence = Int(sequenceString), sequence > currentSequence {
             try Keychain.insert(entry: SatispayInStoreConfig.environment.keychain.sequenceNumber, value: sequence)
             currentSequence = sequence
         }
