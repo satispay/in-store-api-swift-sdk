@@ -14,6 +14,7 @@ public struct StartedRequest: Encodable {
     let udid: String?
     let language: String
     let deviceInfo: String
+    let appVersion: String
 
     #if os(macOS)
     private let os = "macOS"
@@ -30,14 +31,16 @@ public struct StartedRequest: Encodable {
         case deviceInfo = "device_model"
         case os = "os_app"
         case osVersion = "os_version"
+        case appVersion = "app_version"
 
     }
 
-    public init(udid: String?, language: String, deviceInfo: String) {
+    public init(udid: String?, language: String, deviceInfo: String, appVersion: String) {
 
         self.language = language
         self.udid = udid
         self.deviceInfo = deviceInfo
+        self.appVersion = appVersion
 
     }
 
