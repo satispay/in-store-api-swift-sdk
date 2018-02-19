@@ -9,7 +9,7 @@
 import Foundation
 
 /// DH exchange error.
-public enum DHError: Error {
+public enum DHError: Int, Error {
 
     /// The public key used to configure the environment is malformed.
     case cannotImportPublicKey
