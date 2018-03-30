@@ -9,7 +9,7 @@
 import Foundation
 
 /// Payment transaction.
-public struct Transaction: Decodable {
+public struct Transaction: Decodable, Equatable {
 
     /// Unique id.
     public let id: String
@@ -79,17 +79,12 @@ public struct Transaction: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         id = try container.decode(String.self, forKey: .id)
-
         type = try? container.decode(TransactionType.self, forKey: .type)
         state = try container.decode(TransactionState.self, forKey: .state)
-
         amount = try container.decode(Int.self, forKey: .amount)
-
         date = try? container.decode(Date.self, forKey: .date)
-
         dailyClosure = try? container.decode(String.self, forKey: .dailyClosure)
         dailyClosureDate = try? container.decode(Date.self, forKey: .dailyClosureDate)
-
         deviceUid = try? container.decode(String.self, forKey: .deviceUid)
         deviceType = try? container.decode(String.self, forKey: .deviceType)
 
@@ -102,28 +97,6 @@ public struct Transaction: Decodable {
         consumerId = try? consumerContainer.decode(String.self, forKey: .id)
         consumerName = try? consumerContainer.decode(String.self, forKey: .name)
         consumerImageURL = try? consumerContainer.decode(URL.self, forKey: .imageURL)
-
-    }
-
-}
-
-extension Transaction: Equatable {
-
-    public static func == (lhs: Transaction, rhs: Transaction) -> Bool {
-
-        return lhs.id == rhs.id
-            && lhs.type == rhs.type
-            && lhs.state == rhs.state
-            && lhs.amount == rhs.amount
-            && lhs.date == rhs.date
-            && lhs.dailyClosure == rhs.dailyClosure
-            && lhs.dailyClosureDate == rhs.dailyClosureDate
-            && lhs.deviceUid == rhs.deviceUid
-            && lhs.deviceType == rhs.deviceType
-            && lhs.shopId == rhs.shopId
-            && lhs.consumerId == rhs.consumerId
-            && lhs.consumerName == rhs.consumerName
-            && lhs.consumerImageURL == rhs.consumerImageURL
 
     }
 
