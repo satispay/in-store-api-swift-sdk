@@ -33,7 +33,7 @@ public enum Hash {
 
 extension Hash {
 
-    typealias DigestFunction = (_ data: UnsafeRawPointer, _ len: CC_LONG, _ md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>!
+    typealias DigestFunction = (_ data: UnsafeRawPointer, _ len: CC_LONG, _ md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>?
 
     /// Computes a generic digest of the `data` bytes.
     ///

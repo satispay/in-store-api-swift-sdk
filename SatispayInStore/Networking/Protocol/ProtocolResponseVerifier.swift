@@ -103,7 +103,7 @@ struct ProtocolResponseVerifier {
             throw ProtocolResponseVerifierError.malformedResponse
         }
 
-        let toSign = headers.flatMap({ name -> String? in
+        let toSign = headers.compactMap({ name -> String? in
 
             for (key, value) in response.allHeaderFields {
 
