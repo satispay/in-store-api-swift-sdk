@@ -17,6 +17,7 @@ extension Profile {
         public let name: String?
         public let pictureURL: URL?
         public let address: Address?
+        public let qrCodeIdentifier: String?
 
         enum CodingKeys: String, CodingKey {
 
@@ -25,6 +26,7 @@ extension Profile {
             case name
             case address = "spot_address_bean"
             case pictureURL = "image_url"
+            case qrCodeIdentifier = "qr_code_identifier"
 
         }
 
@@ -37,6 +39,7 @@ extension Profile {
             name = try? container.decode(String.self, forKey: .name)
             pictureURL = try? container.decode(URL.self, forKey: .pictureURL)
             address = try? container.decode(Address.self, forKey: .address)
+            qrCodeIdentifier = try? container.decode(String.self, forKey: .qrCodeIdentifier)
 
         }
 
