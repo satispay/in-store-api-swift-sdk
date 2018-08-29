@@ -754,6 +754,7 @@
 					};
 					E84E92B61FB203A700E80816 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					E8C75FC91FC6BC90001B5E7A = {
@@ -1246,7 +1247,7 @@
 				PRODUCT_NAME = SatispayInStore;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/iOS/**";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1275,7 +1276,7 @@
 				PRODUCT_NAME = SatispayInStore;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/iOS/**";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
