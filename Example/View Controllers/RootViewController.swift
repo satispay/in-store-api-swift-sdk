@@ -164,7 +164,7 @@ extension RootViewController {
 
     private func main() {
 
-        _ = AnalyticsController().started(udid: nil) { [weak self] (response, error) in
+        _ = AnalyticsController().started(udid: nil, deviceInfo: "SatispayInStore-example", appVersion: "1.0") { [weak self] (response, error) in
 
             guard response?.status == "OK" else {
 
@@ -213,10 +213,10 @@ extension RootViewController {
 
     private func presentChildViewController(_ controller: UIViewController) {
 
-        let currentController = childViewControllers.first
-        currentController?.willMove(toParentViewController: nil)
+        let currentController = children.first
+        currentController?.willMove(toParent: nil)
 
-        addChildViewController(controller)
+        addChild(controller)
 
         controller.view.frame = view.bounds
         controller.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -233,7 +233,7 @@ extension RootViewController {
         }, completion: { [weak self] _ in
 
             controller.endAppearanceTransition()
-            controller.didMove(toParentViewController: self)
+            controller.didMove(toParent: self)
 
             if let currentController = currentController {
 
@@ -245,7 +245,7 @@ extension RootViewController {
                 currentController.view.removeFromSuperview()
                 currentController.endAppearanceTransition()
 
-                currentController.removeFromParentViewController()
+                currentController.removeFromParent()
 
             }
 
@@ -255,11 +255,11 @@ extension RootViewController {
 
     private func dismissChildViewController() {
 
-        guard let controller = childViewControllers.first else {
+        guard let controller = children.first else {
             return
         }
 
-        controller.willMove(toParentViewController: nil)
+        controller.willMove(toParent: nil)
 
         UIView.animate(withDuration: 0.2, animations: {
 
@@ -275,7 +275,7 @@ extension RootViewController {
             controller.view.removeFromSuperview()
             controller.endAppearanceTransition()
 
-            controller.removeFromParentViewController()
+            controller.removeFromParent()
 
         })
 
