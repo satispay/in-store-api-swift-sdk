@@ -1,22 +1,22 @@
 //
-//  PaginatedResponse.swift
+//  PaginatedDataResponse.swift
 //  SatispayInStore
 //
-//  Created by Pierluigi D'Andrea on 09/10/17.
-//  Copyright © 2017 Satispay. All rights reserved.
+//  Created by Pierluigi D'Andrea on 16/01/2019.
+//  Copyright © 2019 Pierluigi D'Andrea. All rights reserved.
 //
 
 import Foundation
 
-public struct PaginatedResponse<Type: Decodable>: Decodable {
+public struct PaginatedDataResponse<Type: Decodable>: Decodable {
 
     public let isLastPage: Bool
-    public let list: [Type]
+    public let data: [Type]
 
     enum CodingKeys: String, CodingKey {
 
         case hasMore = "has_more"
-        case list
+        case data
 
     }
 
@@ -26,7 +26,7 @@ public struct PaginatedResponse<Type: Decodable>: Decodable {
 
         isLastPage = !(try container.decodeIfPresent(Bool.self, forKey: .hasMore) ?? false)
 
-        var dataContainer = try container.nestedUnkeyedContainer(forKey: .list)
+        var dataContainer = try container.nestedUnkeyedContainer(forKey: .data)
         var data = [Type]()
 
         while !dataContainer.isAtEnd {
@@ -40,15 +40,18 @@ public struct PaginatedResponse<Type: Decodable>: Decodable {
 
         }
 
-        list = data
+        self.data = data
 
     }
 
 }
 
-extension PaginatedResponse {
+extension PaginatedDataResponse {
 
     private struct WildcardDecodable: Decodable {
     }
 
+}
+
+extension PaginatedDataResponse: Equatable where Type: Equatable {
 }

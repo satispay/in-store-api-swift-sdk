@@ -11,7 +11,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    private var transactions: [[Transaction]] = [[], []] {
+    private var transactions: [[Payment]] = [[], []] {
         didSet {
             var sectionsToReload = IndexSet()
 
@@ -30,6 +30,7 @@ class MainViewController: UITableViewController {
     }
 
     private lazy var transactionsController = TransactionsController()
+    private lazy var paymentsController = PaymentsController()
 
     private lazy var currencyFormatter: NumberFormatter = {
 
@@ -74,9 +75,7 @@ class MainViewController: UITableViewController {
 extension MainViewController: ProfileRequiring {
 
     func configure(with profile: Profile) {
-
         title = profile.shop.name
-
     }
 
 }
@@ -84,16 +83,12 @@ extension MainViewController: ProfileRequiring {
 // MARK: - Updating
 extension MainViewController {
 
-    private func updatePendingTransactions(from response: PaginatedResponse<Transaction>) {
-
-        transactions[0] = response.list.filter { $0.state == .pending }
-
+    private func updatePendingTransactions(from response: PaginatedDataResponse<Payment>) {
+        transactions[0] = response.data.filter { $0.status == .pending }
     }
 
-    private func updateApprovedTransactions(from response: PaginatedResponse<Transaction>) {
-
-        transactions[1] = response.list.filter { $0.state == .approved }
-
+    private func updateApprovedTransactions(from response: PaginatedDataResponse<Payment>) {
+        transactions[1] = response.data.filter { $0.status == .accepted }
     }
 
 }
@@ -123,17 +118,16 @@ extension MainViewController {
 
         cell.textLabel?.text = {
 
-            let payer = transaction.consumerName
-            let type = transaction.type?.rawValue
+            let payer = [transaction.sender.name, transaction.sender.surname].compactMap { $0 }.joined(separator: " ")
+            let type = transaction.type
 
-            return "\(payer ?? "Unknown") (\(type ?? "unknown type"))"
+            return "\(payer) (\(type ?? "unknown type"))"
 
         }()
 
         cell.detailTextLabel?.text = {
 
-            let amount = NSDecimalNumber(value: transaction.amount).dividing(by: NSDecimalNumber(value: 100))
-
+            let amount = NSDecimalNumber(value: transaction.amountUnit).dividing(by: NSDecimalNumber(value: 100))
             return currencyFormatter.string(from: amount)
 
         }()
@@ -180,15 +174,11 @@ extension MainViewController {
     private func rowActionsForPendingTransaction() -> [UITableViewRowAction] {
 
         let confirmAction = UITableViewRowAction(style: .normal, title: "Confirm") { [weak self] (_, indexPath) in
-
-            self?.updateStateOfTransaction(at: indexPath, to: .approved)
-
+            self?.updateStateOfPayment(at: indexPath, action: .accept)
         }
 
         let cancelAction = UITableViewRowAction(style: .destructive, title: "Cancel") { [weak self] (_, indexPath) in
-
-            self?.updateStateOfTransaction(at: indexPath, to: .cancelled)
-
+            self?.updateStateOfPayment(at: indexPath, action: .cancel)
         }
 
         return [confirmAction, cancelAction]
@@ -197,14 +187,12 @@ extension MainViewController {
 
     private func rowActionsForApprovedTransaction(at index: Int) -> [UITableViewRowAction] {
 
-        guard transactions[1][index].type == .c2b else {
+        guard transactions[1][index].type == "TO_BUSINESS" else {
             return []
         }
 
         let refundAction = UITableViewRowAction(style: .normal, title: "Refund") { [weak self] (_, indexPath) in
-
             self?.refundTransaction(at: indexPath)
-
         }
 
         return [refundAction]
@@ -213,10 +201,10 @@ extension MainViewController {
 
 }
 
-// MARK: - Transaction update/refund
+// MARK: - Payment update/refund
 extension MainViewController {
 
-    private func updateStateOfTransaction(at indexPath: IndexPath, to newState: TransactionState) {
+    private func updateStateOfPayment(at indexPath: IndexPath, action: PaymentUpdateAction) {
 
         guard indexPath.section == 0, transactions[0].count > indexPath.row else {
             return
@@ -224,10 +212,10 @@ extension MainViewController {
 
         let transaction = transactions[indexPath.section][indexPath.row]
 
-        _ = TransactionsController().updateState(of: transaction.id, with: newState, completionHandler: { [weak self] (_, error) in
+        _ = PaymentsController().updatePayment(id: transaction.id, action: action, completionHandler: { [weak self] (_, error) in
 
             guard error == nil else {
-                self?.failUpdate(of: transaction, to: newState)
+                self?.failUpdate(of: transaction, action: action)
                 return
             }
 
@@ -237,10 +225,10 @@ extension MainViewController {
 
     }
 
-    private func failUpdate(of transaction: Transaction, to newState: TransactionState) {
+    private func failUpdate(of transaction: Payment, action: PaymentUpdateAction) {
 
         let errorController = UIAlertController(title: "Error",
-                                                message: "Couldn't update transaction \(transaction.id) state to \(newState.rawValue)",
+                                                message: "Couldn't update payment \(transaction.id) with action \(action.rawValue)",
                                                 preferredStyle: .alert)
 
         errorController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -270,7 +258,7 @@ extension MainViewController {
 
     }
 
-    private func failRefund(of transaction: Transaction) {
+    private func failRefund(of transaction: Payment) {
 
         let errorController = UIAlertController(title: "Error",
                                                 message: "Couldn't refund transaction \(transaction.id)",
@@ -291,14 +279,14 @@ extension MainViewController {
 
         let group = DispatchGroup()
 
-        let analytics = TransactionsListRequest.Analytics(softwareHouse: "Satispay",
+        let analytics = PaymentsListRequest.Analytics(softwareHouse: "Satispay",
                                                           softwareName: "SatispayInStore example app",
                                                           softwareVersion: "1.0",
                                                           deviceInfo: UIDevice.current.modelName)
 
         group.enter()
 
-        _ = transactionsController.transactions(filter: "proposed", analytics: analytics) { [weak self] (response, _) in
+        _ = paymentsController.payments(status: .pending, analytics: analytics) { [weak self] (response, _) in
 
             if let response = response {
                 self?.updatePendingTransactions(from: response)
@@ -310,7 +298,7 @@ extension MainViewController {
 
         group.enter()
 
-        _ = transactionsController.transactions(analytics: analytics) { [weak self] (response, _) in
+        _ = paymentsController.payments(analytics: analytics) { [weak self] (response, _) in
 
             if let response = response {
                 self?.updateApprovedTransactions(from: response)

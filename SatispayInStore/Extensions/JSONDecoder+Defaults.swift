@@ -26,10 +26,10 @@ extension JSONDecoder {
     /// - Returns: JSON decoder
     static func decoder() -> JSONDecoder {
 
-        let encoder = JSONDecoder()
-        encoder.dateDecodingStrategy = .formatted(formatter)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
 
-        return encoder
+        return decoder
 
     }
 

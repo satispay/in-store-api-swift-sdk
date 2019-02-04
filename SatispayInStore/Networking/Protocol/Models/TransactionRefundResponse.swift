@@ -14,7 +14,7 @@ public struct TransactionRefundResponse: Decodable {
     public let parentId: String
     public let date: Date?
     public let amount: Int
-    public let state: TransactionState
+    public let state: Payment.Status
     public let expired: Bool
     public let comment: String?
 

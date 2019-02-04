@@ -1,5 +1,5 @@
 //
-//  TransactionsListRequest.swift
+//  PaymentsListRequest.swift
 //  SatispayInStore
 //
 //  Created by Pierluigi D'Andrea on 09/10/17.
@@ -8,31 +8,31 @@
 
 import Foundation
 
-public struct TransactionsListRequest: Encodable {
+public struct PaymentsListRequest: Encodable {
 
-    let filter: String?
-    let offset: String?
+    let status: Payment.Status?
+    let startingAfter: String?
     let limit: UInt?
 
     enum CodingKeys: String, CodingKey {
 
-        case filter
-        case offset = "starting_after"
+        case status
+        case startingAfter = "starting_after"
         case limit
 
     }
 
-    public init(filter: String?, offset: String?, limit: UInt?) {
+    public init(status: Payment.Status?, startingAfter: String?, limit: UInt?) {
 
-        self.filter = filter
-        self.offset = offset
+        self.status = status
+        self.startingAfter = startingAfter
         self.limit = limit
 
     }
 
 }
 
-extension TransactionsListRequest {
+extension PaymentsListRequest {
 
     public struct Analytics {
 
@@ -63,7 +63,7 @@ extension TransactionsListRequest {
 
 }
 
-extension TransactionsListRequest.Analytics {
+extension PaymentsListRequest.Analytics {
 
     public enum DeviceType: String {
 

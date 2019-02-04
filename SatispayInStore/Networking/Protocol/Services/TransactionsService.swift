@@ -12,13 +12,7 @@ import UIKit
 #endif
 
 public enum TransactionsService {
-
-    case list(request: TransactionsListRequest, analytics: TransactionsListRequest.Analytics)
-
-    case updateState(id: String, request: TransactionStateUpdateRequest)
-
     case refund(id: String)
-
 }
 
 extension TransactionsService: NetworkService {
@@ -29,35 +23,17 @@ extension TransactionsService: NetworkService {
 
     public var path: String? {
         switch self {
-        case .list:
-            return "v2.1/transactions"
-        case .updateState(let id, _):
-            return "v2.1/transactions/\(id)/state"
         case .refund(let id):
             return "v2.1/transactions/\(id)/refunds"
         }
     }
 
     public var queryParameters: [String: Any]? {
-        switch self {
-        case .list(let request, _):
-            guard let data = try? JSONEncoder.encode(request) else {
-                return nil
-            }
-
-            return (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any]
-        case .updateState,
-             .refund:
-            return nil
-        }
+        return nil
     }
 
     public var method: HTTPMethod {
         switch self {
-        case .list:
-            return .get
-        case .updateState:
-            return .put
         case .refund:
             return .post
         }
@@ -65,41 +41,13 @@ extension TransactionsService: NetworkService {
 
     public var body: Data? {
         switch self {
-        case .list:
-            return nil
-        case .updateState(_, let request):
-            return try? JSONEncoder.encode(request)
         case .refund:
             return nil
         }
     }
 
     public var headers: [String: String]? {
-
-        guard case .list(_, let analytics) = self else {
-            return nil
-        }
-
-        var headers: [String: String] = [
-            "x-satispay-deviceinfo": analytics.deviceInfo,
-            "x-satispay-apph": analytics.softwareHouse,
-            "x-satispay-appn": analytics.softwareName,
-            "x-satispay-appv": analytics.softwareVersion,
-            "x-satispay-devicetype": analytics.deviceType.rawValue
-        ]
-
-        #if os(iOS)
-        headers["x-satispay-os"] = UIDevice.current.systemName
-        headers["x-satispay-osv"] = UIDevice.current.systemVersion
-        #elseif os(macOS)
-        headers["x-satispay-os"] = "macOS"
-        headers["x-satispay-osv"] = ProcessInfo.processInfo.operatingSystemVersionString
-        #endif
-
-        headers["x-satispay-tracking-code"] = analytics.trackingCode
-
-        return headers
-
+        return nil
     }
 
     public var requiresSignature: Bool {
