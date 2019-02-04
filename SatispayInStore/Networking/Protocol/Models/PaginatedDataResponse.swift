@@ -44,6 +44,11 @@ public struct PaginatedDataResponse<Type: Decodable>: Decodable {
 
     }
 
+    public init(isLastPage: Bool, data: [Type]) {
+        self.isLastPage = isLastPage
+        self.data = data
+    }
+
 }
 
 extension PaginatedDataResponse {
