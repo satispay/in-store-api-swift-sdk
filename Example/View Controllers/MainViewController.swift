@@ -29,7 +29,6 @@ class MainViewController: UITableViewController {
         }
     }
 
-    private lazy var transactionsController = TransactionsController()
     private lazy var paymentsController = PaymentsController()
 
     private lazy var currencyFormatter: NumberFormatter = {
@@ -245,7 +244,7 @@ extension MainViewController {
 
         let transaction = transactions[indexPath.section][indexPath.row]
 
-        _ = TransactionsController().refund(transactionId: transaction.id) { [weak self] (_, error) in
+        _ = paymentsController.createPayment(flow: .refund, amountUnit: transaction.amountUnit, currency: transaction.currency, expirationDate: nil, metadata: nil, callbackURL: nil, parentPaymentUid: transaction.id) { [weak self] (_, error) in
 
             guard error == nil else {
                 self?.failRefund(of: transaction)

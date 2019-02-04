@@ -38,8 +38,6 @@
 		E815C7E81FC31905002B7246 /* EnvironmentKeychainConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815C7E71FC31905002B7246 /* EnvironmentKeychainConfig.swift */; };
 		E83A868F1FC80E5900C705B0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A868E1FC80E5900C705B0 /* NavigationController.swift */; };
 		E83A86921FC80EAC00C705B0 /* ProfileRequiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86911FC80EAC00C705B0 /* ProfileRequiring.swift */; };
-		E83A86941FC81AA300C705B0 /* TransactionRefundResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86931FC81AA300C705B0 /* TransactionRefundResponse.swift */; };
-		E83A86961FC81B1600C705B0 /* TransactionsController+Refund.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86951FC81B1600C705B0 /* TransactionsController+Refund.swift */; };
 		E83A869D1FC82C9A00C705B0 /* UIDevice+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A869C1FC82C9A00C705B0 /* UIDevice+Model.swift */; };
 		E84E92BC1FB203A700E80816 /* SatispayInStore.h in Headers */ = {isa = PBXBuildFile; fileRef = E84E92BA1FB203A700E80816 /* SatispayInStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E84E93061FB20A1100E80816 /* DailyClosureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D31FB20A1100E80816 /* DailyClosureResponse.swift */; };
@@ -65,7 +63,6 @@
 		E84E931F1FB20A1100E80816 /* DHController+Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92ED1FB20A1100E80816 /* DHController+Exchange.swift */; };
 		E84E93201FB20A1100E80816 /* DHController+Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EE1FB20A1100E80816 /* DHController+Verification.swift */; };
 		E84E93211FB20A1100E80816 /* DHController+PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EF1FB20A1100E80816 /* DHController+PublicKey.swift */; };
-		E84E93221FB20A1100E80816 /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F01FB20A1100E80816 /* TransactionsController.swift */; };
 		E84E93231FB20A1100E80816 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F11FB20A1100E80816 /* ProfileController.swift */; };
 		E84E93241FB20A1100E80816 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F21FB20A1100E80816 /* AnalyticsController.swift */; };
 		E84E93251FB20A1100E80816 /* DevicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F31FB20A1100E80816 /* DevicesController.swift */; };
@@ -74,7 +71,6 @@
 		E84E93281FB20A1100E80816 /* DHController+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F61FB20A1100E80816 /* DHController+Parameters.swift */; };
 		E84E93291FB20A1100E80816 /* DHController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F71FB20A1100E80816 /* DHController.swift */; };
 		E84E932A1FB20A1100E80816 /* PaymentsController+Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F81FB20A1100E80816 /* PaymentsController+Payments.swift */; };
-		E84E932B1FB20A1100E80816 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FA1FB20A1100E80816 /* TransactionsService.swift */; };
 		E84E932D1FB20A1200E80816 /* DevicesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FC1FB20A1100E80816 /* DevicesService.swift */; };
 		E84E932E1FB20A1200E80816 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FD1FB20A1100E80816 /* ProfileService.swift */; };
 		E84E932F1FB20A1200E80816 /* DailyClosureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FE1FB20A1100E80816 /* DailyClosureService.swift */; };
@@ -93,6 +89,10 @@
 		E889919A1FB300CA0079FBDE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991991FB300CA0079FBDE /* HTTPMethod.swift */; };
 		E8AFC61322083B0A003A1839 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61222083B0A003A1839 /* ProfilePicture.swift */; };
 		E8AFC61422083B0A003A1839 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61222083B0A003A1839 /* ProfilePicture.swift */; };
+		E8AFC61622087921003A1839 /* PaymentCreationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */; };
+		E8AFC61722087921003A1839 /* PaymentCreationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */; };
+		E8AFC61E22087D21003A1839 /* PaymentsController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61D22087D21003A1839 /* PaymentsController+Creation.swift */; };
+		E8AFC61F22087D21003A1839 /* PaymentsController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61D22087D21003A1839 /* PaymentsController+Creation.swift */; };
 		E8B286BF1FD05A18004013F4 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B286BE1FD05A18004013F4 /* HTTPResponse.swift */; };
 		E8C55F171FB342C200B20F93 /* ProtocolRequestSignerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F121FB342C200B20F93 /* ProtocolRequestSignerError.swift */; };
 		E8C55F181FB342C200B20F93 /* ProtocolResponseVerifierError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F131FB342C200B20F93 /* ProtocolResponseVerifierError.swift */; };
@@ -177,10 +177,8 @@
 		E8E344B32010C4850049385F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EC1FB20A1100E80816 /* NetworkController.swift */; };
 		E8E344B42010C4850049385F /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F11FB20A1100E80816 /* ProfileController.swift */; };
 		E8E344B52010C4850049385F /* ShopsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F41FB20A1100E80816 /* ShopsController.swift */; };
-		E8E344B62010C4850049385F /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F01FB20A1100E80816 /* TransactionsController.swift */; };
 		E8E344B72010C4850049385F /* PaymentsController+Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92F81FB20A1100E80816 /* PaymentsController+Payments.swift */; };
 		E8E344B82010C4850049385F /* PaymentsController+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92EB1FB20A1100E80816 /* PaymentsController+Update.swift */; };
-		E8E344B92010C4850049385F /* TransactionsController+Refund.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86951FC81B1600C705B0 /* TransactionsController+Refund.swift */; };
 		E8E344BA2010C48A0049385F /* DailyClosureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D31FB20A1100E80816 /* DailyClosureResponse.swift */; };
 		E8E344BB2010C48A0049385F /* DeviceUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E51FB20A1100E80816 /* DeviceUpdateRequest.swift */; };
 		E8E344BC2010C48A0049385F /* DHChallengeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D91FB20A1100E80816 /* DHChallengeRequest.swift */; };
@@ -195,7 +193,6 @@
 		E8E344C62010C48A0049385F /* ShopLocationUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D71FB20A1100E80816 /* ShopLocationUpdateRequest.swift */; };
 		E8E344C72010C48A0049385F /* StartedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E41FB20A1100E80816 /* StartedRequest.swift */; };
 		E8E344C82010C48A0049385F /* StartedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92E11FB20A1100E80816 /* StartedResponse.swift */; };
-		E8E344C92010C48A0049385F /* TransactionRefundResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86931FC81AA300C705B0 /* TransactionRefundResponse.swift */; };
 		E8E344CA2010C48A0049385F /* PaymentsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92D81FB20A1100E80816 /* PaymentsListRequest.swift */; };
 		E8E344CB2010C48A0049385F /* PaymentUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92DB1FB20A1100E80816 /* PaymentUpdateRequest.swift */; };
 		E8E344CD2010C48A0049385F /* UpdateDeviceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F5F1FB3733C00B20F93 /* UpdateDeviceResponse.swift */; };
@@ -206,7 +203,6 @@
 		E8E344D22010C48E0049385F /* DHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93011FB20A1100E80816 /* DHService.swift */; };
 		E8E344D32010C48E0049385F /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FD1FB20A1100E80816 /* ProfileService.swift */; };
 		E8E344D42010C48E0049385F /* ShopsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93001FB20A1100E80816 /* ShopsService.swift */; };
-		E8E344D52010C48E0049385F /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FA1FB20A1100E80816 /* TransactionsService.swift */; };
 		E8E3AA802024AF5900732698 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3AA7E2024AF5900732698 /* libssl.a */; };
 		E8E3AA812024AF5900732698 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3AA7F2024AF5900732698 /* libcrypto.a */; };
 		E8F02F471FC732940090F7DE /* SatispayInStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; };
@@ -243,8 +239,6 @@
 		E815C7E71FC31905002B7246 /* EnvironmentKeychainConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentKeychainConfig.swift; sourceTree = "<group>"; };
 		E83A868E1FC80E5900C705B0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E83A86911FC80EAC00C705B0 /* ProfileRequiring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequiring.swift; sourceTree = "<group>"; };
-		E83A86931FC81AA300C705B0 /* TransactionRefundResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRefundResponse.swift; sourceTree = "<group>"; };
-		E83A86951FC81B1600C705B0 /* TransactionsController+Refund.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionsController+Refund.swift"; sourceTree = "<group>"; };
 		E83A869C1FC82C9A00C705B0 /* UIDevice+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Model.swift"; sourceTree = "<group>"; };
 		E84E92B71FB203A700E80816 /* SatispayInStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SatispayInStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84E92BA1FB203A700E80816 /* SatispayInStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SatispayInStore.h; sourceTree = "<group>"; };
@@ -272,7 +266,6 @@
 		E84E92ED1FB20A1100E80816 /* DHController+Exchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DHController+Exchange.swift"; sourceTree = "<group>"; };
 		E84E92EE1FB20A1100E80816 /* DHController+Verification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DHController+Verification.swift"; sourceTree = "<group>"; };
 		E84E92EF1FB20A1100E80816 /* DHController+PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DHController+PublicKey.swift"; sourceTree = "<group>"; };
-		E84E92F01FB20A1100E80816 /* TransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsController.swift; sourceTree = "<group>"; };
 		E84E92F11FB20A1100E80816 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		E84E92F21FB20A1100E80816 /* AnalyticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 		E84E92F31FB20A1100E80816 /* DevicesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesController.swift; sourceTree = "<group>"; };
@@ -281,7 +274,6 @@
 		E84E92F61FB20A1100E80816 /* DHController+Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DHController+Parameters.swift"; sourceTree = "<group>"; };
 		E84E92F71FB20A1100E80816 /* DHController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHController.swift; sourceTree = "<group>"; };
 		E84E92F81FB20A1100E80816 /* PaymentsController+Payments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentsController+Payments.swift"; sourceTree = "<group>"; };
-		E84E92FA1FB20A1100E80816 /* TransactionsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
 		E84E92FC1FB20A1100E80816 /* DevicesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesService.swift; sourceTree = "<group>"; };
 		E84E92FD1FB20A1100E80816 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		E84E92FE1FB20A1100E80816 /* DailyClosureService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyClosureService.swift; sourceTree = "<group>"; };
@@ -299,6 +291,8 @@
 		E88991931FB2F5930079FBDE /* SatispayInStoreConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatispayInStoreConfig.swift; sourceTree = "<group>"; };
 		E88991991FB300CA0079FBDE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		E8AFC61222083B0A003A1839 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCreationRequest.swift; sourceTree = "<group>"; };
+		E8AFC61D22087D21003A1839 /* PaymentsController+Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentsController+Creation.swift"; sourceTree = "<group>"; };
 		E8B286BE1FD05A18004013F4 /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		E8C55F121FB342C200B20F93 /* ProtocolRequestSignerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolRequestSignerError.swift; sourceTree = "<group>"; };
 		E8C55F131FB342C200B20F93 /* ProtocolResponseVerifierError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolResponseVerifierError.swift; sourceTree = "<group>"; };
@@ -497,6 +491,7 @@
 				E84E92DF1FB20A1100E80816 /* DHVerificationRequest.swift */,
 				E84E92E21FB20A1100E80816 /* DHVerificationResponse.swift */,
 				E8062F2821EF3415004BD1CA /* PaginatedDataResponse.swift */,
+				E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */,
 				E84E92D81FB20A1100E80816 /* PaymentsListRequest.swift */,
 				E8026B6F21EE298800E99599 /* PaymentUpdateAction.swift */,
 				E84E92DB1FB20A1100E80816 /* PaymentUpdateRequest.swift */,
@@ -504,7 +499,6 @@
 				E84E92D71FB20A1100E80816 /* ShopLocationUpdateRequest.swift */,
 				E84E92E41FB20A1100E80816 /* StartedRequest.swift */,
 				E84E92E11FB20A1100E80816 /* StartedResponse.swift */,
-				E83A86931FC81AA300C705B0 /* TransactionRefundResponse.swift */,
 				E8C55F5F1FB3733C00B20F93 /* UpdateDeviceResponse.swift */,
 				E8C55F671FB3799200B20F93 /* UpdateLocationResponse.swift */,
 			);
@@ -526,12 +520,11 @@
 				E84E92EE1FB20A1100E80816 /* DHController+Verification.swift */,
 				E84E92EC1FB20A1100E80816 /* NetworkController.swift */,
 				E8026B6B21EE27EC00E99599 /* PaymentsController.swift */,
+				E8AFC61D22087D21003A1839 /* PaymentsController+Creation.swift */,
 				E84E92F81FB20A1100E80816 /* PaymentsController+Payments.swift */,
 				E84E92EB1FB20A1100E80816 /* PaymentsController+Update.swift */,
 				E84E92F11FB20A1100E80816 /* ProfileController.swift */,
 				E84E92F41FB20A1100E80816 /* ShopsController.swift */,
-				E84E92F01FB20A1100E80816 /* TransactionsController.swift */,
-				E83A86951FC81B1600C705B0 /* TransactionsController+Refund.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -545,7 +538,6 @@
 				E84E93011FB20A1100E80816 /* DHService.swift */,
 				E84E92FD1FB20A1100E80816 /* ProfileService.swift */,
 				E84E93001FB20A1100E80816 /* ShopsService.swift */,
-				E84E92FA1FB20A1100E80816 /* TransactionsService.swift */,
 				E8026B6421EE21A800E99599 /* PaymentsService.swift */,
 			);
 			path = Services;
@@ -852,7 +844,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8026B6C21EE27EC00E99599 /* PaymentsController.swift in Sources */,
-				E83A86941FC81AA300C705B0 /* TransactionRefundResponse.swift in Sources */,
 				E8C55F351FB342E700B20F93 /* CryptoError.swift in Sources */,
 				E80059861FB45A8F005E8DD6 /* BigInteger.swift in Sources */,
 				E84E932A1FB20A1100E80816 /* PaymentsController+Payments.swift in Sources */,
@@ -877,7 +868,6 @@
 				E87FF3F61FB5F0CB00DAB089 /* NetworkService+Error.swift in Sources */,
 				E8C55F3B1FB342E700B20F93 /* Keychain+Overloads.swift in Sources */,
 				E8C55F2E1FB342E700B20F93 /* RSA.swift in Sources */,
-				E84E93221FB20A1100E80816 /* TransactionsController.swift in Sources */,
 				E8C55F431FB364F300B20F93 /* NetworkService+Request.swift in Sources */,
 				E84E932D1FB20A1200E80816 /* DevicesService.swift in Sources */,
 				E84E93331FB20A1200E80816 /* NetworkService.swift in Sources */,
@@ -886,6 +876,7 @@
 				E8C55F341FB342E700B20F93 /* HMAC.swift in Sources */,
 				E8C55F411FB363BC00B20F93 /* HTTPRequest.swift in Sources */,
 				E84E930F1FB20A1100E80816 /* DHExchangeRequest.swift in Sources */,
+				E8AFC61E22087D21003A1839 /* PaymentsController+Creation.swift in Sources */,
 				E84E931D1FB20A1100E80816 /* PaymentsController+Update.swift in Sources */,
 				E8C55F321FB342E700B20F93 /* OTP.swift in Sources */,
 				E88991941FB2F5930079FBDE /* SatispayInStoreConfig.swift in Sources */,
@@ -910,14 +901,13 @@
 				E84E93141FB20A1100E80816 /* StartedResponse.swift in Sources */,
 				E8C55F331FB342E700B20F93 /* Hash.swift in Sources */,
 				E84E93291FB20A1100E80816 /* DHController.swift in Sources */,
-				E84E932B1FB20A1100E80816 /* TransactionsService.swift in Sources */,
 				E8C55F1B1FB342C200B20F93 /* ProtocolResponseVerifier.swift in Sources */,
-				E83A86961FC81B1600C705B0 /* TransactionsController+Refund.swift in Sources */,
 				E84E931E1FB20A1100E80816 /* NetworkController.swift in Sources */,
 				E84E93631FB2275700E80816 /* JSONDecoder+Defaults.swift in Sources */,
 				E84E931C1FB20A1100E80816 /* DailyClosureController.swift in Sources */,
 				E84E93171FB20A1100E80816 /* StartedRequest.swift in Sources */,
 				E84E930C1FB20A1100E80816 /* DHChallengeRequest.swift in Sources */,
+				E8AFC61622087921003A1839 /* PaymentCreationRequest.swift in Sources */,
 				E84E935E1FB225B700E80816 /* Payment.swift in Sources */,
 				E84E93261FB20A1100E80816 /* ShopsController.swift in Sources */,
 				E84E93101FB20A1100E80816 /* DHChallengeResponse.swift in Sources */,
@@ -963,7 +953,6 @@
 				E8E344BE2010C48A0049385F /* DHEncryptedRequest.swift in Sources */,
 				E8E344A92010C4850049385F /* AnalyticsController.swift in Sources */,
 				E8E344B82010C4850049385F /* PaymentsController+Update.swift in Sources */,
-				E8E344B92010C4850049385F /* TransactionsController+Refund.swift in Sources */,
 				E8E344BA2010C48A0049385F /* DailyClosureResponse.swift in Sources */,
 				E8E344972010C4740049385F /* JSONDecoder+Defaults.swift in Sources */,
 				E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */,
@@ -984,7 +973,6 @@
 				E8E344872010C4620049385F /* BigInteger.swift in Sources */,
 				E8E344932010C4710049385F /* Keychain+Overloads.swift in Sources */,
 				E8E344D02010C48E0049385F /* DailyClosureService.swift in Sources */,
-				E8E344C92010C48A0049385F /* TransactionRefundResponse.swift in Sources */,
 				E8E344D32010C48E0049385F /* ProfileService.swift in Sources */,
 				E8E344A72010C47E0049385F /* ProtocolResponseVerifier.swift in Sources */,
 				E8E344BC2010C48A0049385F /* DHChallengeRequest.swift in Sources */,
@@ -1010,6 +998,7 @@
 				E8E3448D2010C46A0049385F /* DHParams.swift in Sources */,
 				E8E3449D2010C4780049385F /* Payment.swift in Sources */,
 				E8E344BF2010C48A0049385F /* DHEncryptedResponse.swift in Sources */,
+				E8AFC61722087921003A1839 /* PaymentCreationRequest.swift in Sources */,
 				E8E344CD2010C48A0049385F /* UpdateDeviceResponse.swift in Sources */,
 				E8E344C22010C48A0049385F /* DHVerificationRequest.swift in Sources */,
 				E8E344862010C45C0049385F /* CancellableOperation.swift in Sources */,
@@ -1026,6 +1015,7 @@
 				E8E344A32010C47B0049385F /* NetworkService+Request.swift in Sources */,
 				E8E344982010C4740049385F /* JSONEncoder+Defaults.swift in Sources */,
 				E8E344B02010C4850049385F /* DHController+Parameters.swift in Sources */,
+				E8AFC61F22087D21003A1839 /* PaymentsController+Creation.swift in Sources */,
 				E8E344C12010C48A0049385F /* DHExchangeResponse.swift in Sources */,
 				E8E344902010C46D0049385F /* HMAC.swift in Sources */,
 				E8E344892010C4660049385F /* CryptoError.swift in Sources */,
@@ -1040,9 +1030,7 @@
 				E8E3449F2010C47B0049385F /* HTTPRequest.swift in Sources */,
 				E8E3448F2010C46D0049385F /* Hash.swift in Sources */,
 				E8E344922010C4710049385F /* Keychain+Keys.swift in Sources */,
-				E8E344B62010C4850049385F /* TransactionsController.swift in Sources */,
 				E8E344C82010C48A0049385F /* StartedResponse.swift in Sources */,
-				E8E344D52010C48E0049385F /* TransactionsService.swift in Sources */,
 				E8E344B42010C4850049385F /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

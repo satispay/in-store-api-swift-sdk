@@ -14,6 +14,7 @@ import UIKit
 public enum PaymentsService {
 
     case payments(request: PaymentsListRequest, analytics: PaymentsListRequest.Analytics)
+    case createPayment(request: PaymentCreationRequest)
     case updatePayment(id: String, request: PaymentUpdateRequest)
 
 }
@@ -28,6 +29,8 @@ extension PaymentsService: NetworkService {
         switch self {
         case .payments:
             return nil
+        case .createPayment:
+            return nil
         case .updatePayment(let id, _):
             return "/\(id)"
         }
@@ -41,6 +44,8 @@ extension PaymentsService: NetworkService {
             }
 
             return (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any]
+        case .createPayment:
+            return nil
         case .updatePayment:
             return nil
         }
@@ -50,6 +55,8 @@ extension PaymentsService: NetworkService {
         switch self {
         case .payments:
             return .get
+        case .createPayment:
+            return .post
         case .updatePayment:
             return .put
         }
@@ -59,6 +66,8 @@ extension PaymentsService: NetworkService {
         switch self {
         case .payments:
             return nil
+        case .createPayment(let request):
+            return try? JSONEncoder.encode(request)
         case .updatePayment(_, let request):
             return try? JSONEncoder.encode(request)
         }

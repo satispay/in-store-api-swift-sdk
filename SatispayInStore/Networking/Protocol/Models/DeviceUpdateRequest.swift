@@ -27,7 +27,6 @@ public struct DeviceUpdateRequest: Encodable {
         case os = "os_app"
         case osVersion = "os_version"
         case appVersion = "app_version"
-
         case pushToken = "token"
 
     }
