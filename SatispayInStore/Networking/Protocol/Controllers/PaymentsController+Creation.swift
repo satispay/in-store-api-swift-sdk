@@ -11,6 +11,15 @@ import Foundation
 extension PaymentsController {
 
     /// Create a payment.
+    ///
+    /// - Parameters:
+    ///   - flow: Type of payment.
+    ///   - amountUnit: Amount of the payment in cents.
+    ///   - currency: Currency of the payment.
+    ///   - expirationDate: Expiration date of the payment.
+    ///   - metadata: Generic `Encodable` object containing additional info to be stored with the payment.
+    ///   - callbackURL: URL that will be called when the Payment changes state.
+    ///   - parentPaymentUid: Unique ID of the payment to refund (required when flow is `.refund`).
     public func createPayment(flow: PaymentCreationRequest.Flow,
                               amountUnit: Int,
                               currency: String,
@@ -19,7 +28,6 @@ extension PaymentsController {
                               callbackURL: URL?,
                               parentPaymentUid: String?,
                               completionHandler: @escaping CompletionHandler<Payment>) -> CancellableOperation {
-
 
         let request = PaymentCreationRequest(flow: flow,
                                              amountUnit: amountUnit,
