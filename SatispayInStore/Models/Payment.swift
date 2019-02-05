@@ -92,7 +92,6 @@ extension Payment {
         public let id: String
         public let type: String
         public let name: String?
-        public let surname: String?
         public let profilePictures: PaginatedDataResponse<ProfilePicture>?
 
         enum CodingKeys: String, CodingKey {
@@ -100,7 +99,6 @@ extension Payment {
             case id
             case type
             case name
-            case surname
             case profilePictures = "profile_pictures"
 
         }
@@ -112,7 +110,6 @@ extension Payment {
             id = try container.decode(String.self, forKey: .id)
             type = try container.decode(String.self, forKey: .type)
             name = try? container.decode(String.self, forKey: .name)
-            surname = try? container.decode(String.self, forKey: .surname)
             profilePictures = try? container.decode(PaginatedDataResponse<ProfilePicture>.self, forKey: .profilePictures)
 
         }

@@ -115,20 +115,10 @@ extension MainViewController {
 
         let transaction = transactions[indexPath.section][indexPath.row]
 
-        cell.textLabel?.text = {
-
-            let payer = [transaction.sender.name, transaction.sender.surname].compactMap { $0 }.joined(separator: " ")
-            let type = transaction.type
-
-            return "\(payer) (\(type ?? "unknown type"))"
-
-        }()
-
+        cell.textLabel?.text = "\(transaction.sender.name ?? "Unknown") (\(transaction.type ?? "unknown type"))"
         cell.detailTextLabel?.text = {
-
             let amount = NSDecimalNumber(value: transaction.amountUnit).dividing(by: NSDecimalNumber(value: 100))
             return currencyFormatter.string(from: amount)
-
         }()
 
         return cell
