@@ -13,7 +13,7 @@ public class DailyClosureController: NetworkController {
     /// Retrieve the shop/device daily amount collected.
     ///
     /// - Parameters:
-    ///   - day: Day to request (formatted as: `YYYYmmDD`)
+    ///   - day: Day to request (formatted as: `yyyymmDD`)
     ///   - type: Type of daily closure requested.
     public func closure(day: String,
                         type: DailyClosureResponse.Kind,
