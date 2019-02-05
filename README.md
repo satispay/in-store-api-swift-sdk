@@ -2,7 +2,9 @@
 
 This project provides an example iOS application using the Satispay InStore framework to interact with the Satispay in store API.
 
-More information about the API can be retrived in their [documentation](https://s3-eu-west-1.amazonaws.com/docs.satispay.com/index.html#instore-api).
+More information about the API can be retrived in their documentation at:
+- https://developers.satispay.com/reference
+- https://s3-eu-west-1.amazonaws.com/docs.satispay.com/index.html#instore-api
 
 ## Requirements
 
