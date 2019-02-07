@@ -14,7 +14,7 @@ import UIKit
 public enum PaymentsService {
 
     case payments(request: PaymentsListRequest, analytics: PaymentsListRequest.Analytics)
-    case createPayment(request: PaymentCreationRequest)
+    case createPayment(request: PaymentCreationRequest, idempotencyKey: String?)
     case updatePayment(id: String, request: PaymentUpdateRequest)
 
 }
@@ -66,7 +66,7 @@ extension PaymentsService: NetworkService {
         switch self {
         case .payments:
             return nil
-        case .createPayment(let request):
+        case .createPayment(let request, _):
             return try? JSONEncoder.encode(request)
         case .updatePayment(_, let request):
             return try? JSONEncoder.encode(request)
@@ -75,29 +75,32 @@ extension PaymentsService: NetworkService {
 
     public var headers: [String: String]? {
 
-        guard case .payments(_, let analytics) = self else {
+        switch self {
+        case .payments(_, let analytics):
+            var headers: [String: String] = [
+                "x-satispay-deviceinfo": analytics.deviceInfo,
+                "x-satispay-apph": analytics.softwareHouse,
+                "x-satispay-appn": analytics.softwareName,
+                "x-satispay-appv": analytics.softwareVersion,
+                "x-satispay-devicetype": analytics.deviceType.rawValue
+            ]
+
+            #if os(iOS)
+            headers["x-satispay-os"] = UIDevice.current.systemName
+            headers["x-satispay-osv"] = UIDevice.current.systemVersion
+            #elseif os(macOS)
+            headers["x-satispay-os"] = "macOS"
+            headers["x-satispay-osv"] = ProcessInfo.processInfo.operatingSystemVersionString
+            #endif
+
+            headers["x-satispay-tracking-code"] = analytics.trackingCode
+
+            return headers
+        case .createPayment(_, let idempotencyKey?):
+            return ["Idempotency-Key": idempotencyKey]
+        default:
             return nil
         }
-
-        var headers: [String: String] = [
-            "x-satispay-deviceinfo": analytics.deviceInfo,
-            "x-satispay-apph": analytics.softwareHouse,
-            "x-satispay-appn": analytics.softwareName,
-            "x-satispay-appv": analytics.softwareVersion,
-            "x-satispay-devicetype": analytics.deviceType.rawValue
-        ]
-
-        #if os(iOS)
-        headers["x-satispay-os"] = UIDevice.current.systemName
-        headers["x-satispay-osv"] = UIDevice.current.systemVersion
-        #elseif os(macOS)
-        headers["x-satispay-os"] = "macOS"
-        headers["x-satispay-osv"] = ProcessInfo.processInfo.operatingSystemVersionString
-        #endif
-
-        headers["x-satispay-tracking-code"] = analytics.trackingCode
-
-        return headers
 
     }
 

@@ -20,6 +20,7 @@ extension PaymentsController {
     ///   - metadata: Generic `Encodable` object containing additional info to be stored with the payment.
     ///   - callbackURL: URL that will be called when the Payment changes state.
     ///   - parentPaymentUid: Unique ID of the payment to refund (required when flow is `.refund`).
+    ///   - idempotencyKey: Unique key to perform an idempotent request or nil.
     public func createPayment(flow: PaymentCreationRequest.Flow,
                               amountUnit: Int,
                               currency: String,
@@ -27,6 +28,7 @@ extension PaymentsController {
                               metadata: PaymentCreationRequest.Metadata?,
                               callbackURL: URL?,
                               parentPaymentUid: String?,
+                              idempotencyKey: String?,
                               completionHandler: @escaping CompletionHandler<Payment>) -> CancellableOperation {
 
         let request = PaymentCreationRequest(flow: flow,
@@ -37,7 +39,7 @@ extension PaymentsController {
                                              callbackURL: callbackURL,
                                              parentPaymentUid: parentPaymentUid)
 
-        return PaymentsService.createPayment(request: request).request { (response, _, error) in
+        return PaymentsService.createPayment(request: request, idempotencyKey: idempotencyKey).request { (response, _, error) in
             completionHandler(response, error)
         }
 

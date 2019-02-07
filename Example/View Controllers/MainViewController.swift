@@ -234,7 +234,14 @@ extension MainViewController {
 
         let transaction = transactions[indexPath.section][indexPath.row]
 
-        _ = paymentsController.createPayment(flow: .refund, amountUnit: transaction.amountUnit, currency: transaction.currency, expirationDate: nil, metadata: nil, callbackURL: nil, parentPaymentUid: transaction.id) { [weak self] (_, error) in
+        _ = paymentsController.createPayment(flow: .refund,
+                                             amountUnit: transaction.amountUnit,
+                                             currency: transaction.currency,
+                                             expirationDate: nil,
+                                             metadata: nil,
+                                             callbackURL: nil,
+                                             parentPaymentUid: transaction.id,
+                                             idempotencyKey: UUID().uuidString) { [weak self] (_, error) in
 
             guard error == nil else {
                 self?.failRefund(of: transaction)
