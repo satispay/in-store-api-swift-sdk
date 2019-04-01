@@ -216,6 +216,13 @@
 			remoteGlobalIDString = E80059991FB46A68005E8DD6;
 			remoteInfo = OpenSSL;
 		};
+		E89E0D7E2252098100A2D641 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E84E92AE1FB203A700E80816 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E80059991FB46A68005E8DD6;
+			remoteInfo = OpenSSL;
+		};
 		E8F02F451FC7328B0090F7DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E84E92AE1FB203A700E80816 /* Project object */;
@@ -732,6 +739,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E89E0D7F2252098100A2D641 /* PBXTargetDependency */,
 			);
 			name = "SatispayInStore-macOS";
 			productName = "SatispayInStore-macOS";
@@ -1043,6 +1051,11 @@
 			isa = PBXTargetDependency;
 			target = E80059991FB46A68005E8DD6 /* OpenSSL */;
 			targetProxy = E80059A11FB46B0D005E8DD6 /* PBXContainerItemProxy */;
+		};
+		E89E0D7F2252098100A2D641 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E80059991FB46A68005E8DD6 /* OpenSSL */;
+			targetProxy = E89E0D7E2252098100A2D641 /* PBXContainerItemProxy */;
 		};
 		E8F02F461FC7328B0090F7DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
