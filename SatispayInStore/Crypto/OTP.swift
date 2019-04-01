@@ -27,7 +27,7 @@ public struct OTP {
             stepValue = stepValue >> 8
         }
 
-        let hash = HMAC.sha1(of: Data(bytes: buffer), usingKey: secret).digest
+        let hash = HMAC.sha1(of: Data(buffer), usingKey: secret).digest
 
         let offset = Int(hash[hash.count - 1]) & 0xf
 

@@ -44,12 +44,12 @@ extension Hash {
 
         let bytesCount = data.count
 
-        return data.withUnsafeBytes { (pointer: UnsafePointer<UInt8>) -> Data in
+        return data.withUnsafeBytes { (pointer) -> Data in
 
             var digest = [UInt8](repeating: 0, count: length)
-            _ = function(pointer, CC_LONG(bytesCount), &digest)
+            _ = function(pointer.baseAddress!, CC_LONG(bytesCount), &digest)
 
-            return Data(bytes: digest)
+            return Data(digest)
 
         }
 

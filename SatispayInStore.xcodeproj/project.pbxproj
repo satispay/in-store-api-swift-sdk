@@ -768,6 +768,7 @@
 					};
 					E8E344792010BF330049385F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1345,7 +1346,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/macOS";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1372,7 +1373,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/macOS";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

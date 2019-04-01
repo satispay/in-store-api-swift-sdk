@@ -16,19 +16,17 @@ public struct KeyDerivation {
         var key = Data(repeating: 0, count: length)
         var result = errSecSuccess
 
-        password.withUnsafeBytes { (passwordPointer: UnsafePointer<UInt8>) -> Void in
-            key.withUnsafeMutableBytes { (keyPointer: UnsafeMutablePointer<UInt8>) -> Void in
-                passwordPointer.withMemoryRebound(to: Int8.self, capacity: password.count) { (passwordDataPointer) -> Void in
-                    result = CCKeyDerivationPBKDF(CCPBKDFAlgorithm(kCCPBKDF2),
-                                                  passwordDataPointer,
-                                                  password.count,
-                                                  passwordPointer,
-                                                  password.count,
-                                                  CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA1),
-                                                  rounds,
-                                                  keyPointer,
-                                                  length)
-                }
+        password.withUnsafeBytes { (passwordPointer) -> Void in
+            key.withUnsafeMutableBytes { (keyPointer) -> Void in
+                result = CCKeyDerivationPBKDF(CCPBKDFAlgorithm(kCCPBKDF2),
+                                              passwordPointer.bindMemory(to: Int8.self).baseAddress,
+                                              password.count,
+                                              passwordPointer.bindMemory(to: UInt8.self).baseAddress,
+                                              password.count,
+                                              CCPseudoRandomAlgorithm(kCCPRFHmacAlgSHA1),
+                                              rounds,
+                                              keyPointer.bindMemory(to: UInt8.self).baseAddress,
+                                              length)
             }
         }
 

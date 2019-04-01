@@ -72,12 +72,12 @@ extension AES {
                     status = CCCrypt(operation,
                                      algorithm,
                                      CCOptions(kCCOptionPKCS7Padding),
-                                     keyPointer,
+                                     keyPointer.baseAddress,
                                      key.count,
                                      nil,
-                                     dataPointer,
+                                     dataPointer.baseAddress,
                                      data.count,
-                                     outDataPointer,
+                                     outDataPointer.baseAddress,
                                      outDataLength,
                                      &outDataFinalLength)
                 }

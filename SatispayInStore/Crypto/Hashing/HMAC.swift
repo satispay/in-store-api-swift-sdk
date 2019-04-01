@@ -37,13 +37,13 @@ extension HMAC {
     /// - parameter function: Digest function
     private static func digest(of data: Data, with key: Data, length: Int, using algorithm: CCHmacAlgorithm) -> Data {
 
-        return data.withUnsafeBytes { (dataPointer: UnsafePointer<UInt8>) -> Data in
-            return key.withUnsafeBytes { (keyPointer: UnsafePointer<UInt8>) -> Data in
+        return data.withUnsafeBytes { (dataPointer) -> Data in
+            return key.withUnsafeBytes { (keyPointer) -> Data in
 
                 var digest = [UInt8](repeating: 0, count: length)
-                CCHmac(algorithm, keyPointer, key.count, dataPointer, data.count, &digest)
+                CCHmac(algorithm, keyPointer.baseAddress, key.count, dataPointer.baseAddress, data.count, &digest)
 
-                return Data(bytes: digest)
+                return Data(digest)
 
             }
         }
