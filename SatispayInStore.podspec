@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Apache-2.0', :file => 'LICENSE' }
   s.author           = { 'Pierluigi D\'Andrea' => 'pierluigi.dandrea@satispay.com' }
   s.source           = { :git => 'https://github.com/satispay/in-store-api-swift-sdk.git', :tag => s.version.to_s, :submodules => true }
+  s.swift_versions   = "5.0"
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
@@ -23,13 +24,13 @@ Pod::Spec.new do |s|
   s.ios.pod_target_xcconfig = {
       'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/iOS/**',
       'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib-ios',
-      'SWIFT_VERSION' => '4.0'
+      'SWIFT_VERSION' => '5.0'
   }
 
   s.osx.pod_target_xcconfig = {
       'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/macOS/**',
       'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/lib-macos',
-      'SWIFT_VERSION' => '4.0'
+      'SWIFT_VERSION' => '5.0'
   }
 
   s.prepare_command = <<-CMD
