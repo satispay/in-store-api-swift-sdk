@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct ProfilePicture: Decodable, Equatable {
+public struct Picture: Decodable, Equatable {
 
-    public let id: String
+    public let id: String?
     public let url: URL
     public let width: Int?
     public let height: Int?
@@ -26,7 +26,7 @@ public struct ProfilePicture: Decodable, Equatable {
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        id = try container.decode(String.self, forKey: .id)
+        id = try? container.decode(String.self, forKey: .id)
         url = try container.decode(URL.self, forKey: .url)
         width = try? container.decode(Int.self, forKey: .width)
         height = try? container.decode(Int.self, forKey: .height)

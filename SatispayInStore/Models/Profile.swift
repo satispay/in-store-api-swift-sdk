@@ -15,7 +15,7 @@ public struct Profile: Decodable {
     public let name: String?
     public let address: Address?
     public let geolocation: Geolocation?
-    public let images: [ProfilePicture]?
+    public let images: [Picture]?
     public let localization: Localization
     public let acceptance: Acceptance
     public let costCentre: String?
@@ -55,7 +55,7 @@ public struct Profile: Decodable {
         name = try? container.decode(String.self, forKey: .name)
         address = try? container.decode(Address.self, forKey: .address)
         geolocation = try? container.decode(Geolocation.self, forKey: .geolocation)
-        images = try? container.decode([ProfilePicture].self, forKey: .images)
+        images = try? container.decode([Picture].self, forKey: .images)
         localization = try container.decode(Localization.self, forKey: .localization)
         acceptance = try container.decode(Acceptance.self, forKey: .acceptance)
         costCentre = try? container.decode(String.self, forKey: .costCentre)

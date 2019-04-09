@@ -85,8 +85,8 @@
 		E87FF3F61FB5F0CB00DAB089 /* NetworkService+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FF3F51FB5F0CB00DAB089 /* NetworkService+Error.swift */; };
 		E88991941FB2F5930079FBDE /* SatispayInStoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991931FB2F5930079FBDE /* SatispayInStoreConfig.swift */; };
 		E889919A1FB300CA0079FBDE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991991FB300CA0079FBDE /* HTTPMethod.swift */; };
-		E8AFC61322083B0A003A1839 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61222083B0A003A1839 /* ProfilePicture.swift */; };
-		E8AFC61422083B0A003A1839 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61222083B0A003A1839 /* ProfilePicture.swift */; };
+		E8AFC61322083B0A003A1839 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61222083B0A003A1839 /* Picture.swift */; };
+		E8AFC61422083B0A003A1839 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61222083B0A003A1839 /* Picture.swift */; };
 		E8AFC61622087921003A1839 /* PaymentCreationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */; };
 		E8AFC61722087921003A1839 /* PaymentCreationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */; };
 		E8AFC61E22087D21003A1839 /* PaymentsController+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC61D22087D21003A1839 /* PaymentsController+Creation.swift */; };
@@ -291,7 +291,7 @@
 		E87FF3F51FB5F0CB00DAB089 /* NetworkService+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Error.swift"; sourceTree = "<group>"; };
 		E88991931FB2F5930079FBDE /* SatispayInStoreConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatispayInStoreConfig.swift; sourceTree = "<group>"; };
 		E88991991FB300CA0079FBDE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		E8AFC61222083B0A003A1839 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		E8AFC61222083B0A003A1839 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		E8AFC61522087921003A1839 /* PaymentCreationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCreationRequest.swift; sourceTree = "<group>"; };
 		E8AFC61D22087D21003A1839 /* PaymentsController+Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaymentsController+Creation.swift"; sourceTree = "<group>"; };
 		E8B286BE1FD05A18004013F4 /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
@@ -549,7 +549,7 @@
 			children = (
 				E84E93681FB228E600E80816 /* Profile.swift */,
 				E84E935D1FB225B700E80816 /* Payment.swift */,
-				E8AFC61222083B0A003A1839 /* ProfilePicture.swift */,
+				E8AFC61222083B0A003A1839 /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -893,7 +893,7 @@
 				E84E93301FB20A1200E80816 /* AnalyticsService.swift in Sources */,
 				E8C55F681FB3799200B20F93 /* UpdateLocationResponse.swift in Sources */,
 				E8062F2921EF3415004BD1CA /* PaginatedDataResponse.swift in Sources */,
-				E8AFC61322083B0A003A1839 /* ProfilePicture.swift in Sources */,
+				E8AFC61322083B0A003A1839 /* Picture.swift in Sources */,
 				E8C55F361FB342E700B20F93 /* KeyDerivation.swift in Sources */,
 				E84E930D1FB20A1100E80816 /* ServerErrorResponse.swift in Sources */,
 				E84E93061FB20A1100E80816 /* DailyClosureResponse.swift in Sources */,
@@ -980,7 +980,7 @@
 				E8E344A12010C47B0049385F /* NetworkService.swift in Sources */,
 				E8E344D22010C48E0049385F /* DHService.swift in Sources */,
 				E8E344942010C4710049385F /* KeychainEntry.swift in Sources */,
-				E8AFC61422083B0A003A1839 /* ProfilePicture.swift in Sources */,
+				E8AFC61422083B0A003A1839 /* Picture.swift in Sources */,
 				E8E344B52010C4850049385F /* ShopsController.swift in Sources */,
 				E8E344AE2010C4850049385F /* DHController+Challenge.swift in Sources */,
 				E8E344AF2010C4850049385F /* DHController+Exchange.swift in Sources */,
