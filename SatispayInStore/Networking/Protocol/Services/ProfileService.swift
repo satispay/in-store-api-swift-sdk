@@ -17,7 +17,7 @@ public enum ProfileService {
 extension ProfileService: NetworkService {
 
     public var baseURL: URL {
-        return URL(string: "https://\(SatispayInStoreConfig.environment.remoteHost)/spot/v2/profile/")!
+        return URL(string: "https://\(SatispayInStoreConfig.environment.remoteHost)/g_business/v1/profile/")!
     }
 
     public var path: String? {

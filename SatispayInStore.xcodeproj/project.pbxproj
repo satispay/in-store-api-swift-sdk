@@ -81,8 +81,6 @@
 		E84E935E1FB225B700E80816 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E935D1FB225B700E80816 /* Payment.swift */; };
 		E84E93621FB2275700E80816 /* JSONEncoder+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93601FB2275700E80816 /* JSONEncoder+Defaults.swift */; };
 		E84E93631FB2275700E80816 /* JSONDecoder+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93611FB2275700E80816 /* JSONDecoder+Defaults.swift */; };
-		E84E93691FB228E600E80816 /* Profile+Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93661FB228E600E80816 /* Profile+Shop.swift */; };
-		E84E936A1FB228E600E80816 /* Profile+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93671FB228E600E80816 /* Profile+Device.swift */; };
 		E84E936B1FB228E600E80816 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93681FB228E600E80816 /* Profile.swift */; };
 		E87FF3F61FB5F0CB00DAB089 /* NetworkService+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87FF3F51FB5F0CB00DAB089 /* NetworkService+Error.swift */; };
 		E88991941FB2F5930079FBDE /* SatispayInStoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991931FB2F5930079FBDE /* SatispayInStoreConfig.swift */; };
@@ -151,8 +149,6 @@
 		E8E344982010C4740049385F /* JSONEncoder+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93601FB2275700E80816 /* JSONEncoder+Defaults.swift */; };
 		E8E344992010C4740049385F /* NetworkService+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DE9C3C1FBDC87B00B094D2 /* NetworkService+Notification.swift */; };
 		E8E3449A2010C4780049385F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93681FB228E600E80816 /* Profile.swift */; };
-		E8E3449B2010C4780049385F /* Profile+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93671FB228E600E80816 /* Profile+Device.swift */; };
-		E8E3449C2010C4780049385F /* Profile+Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93661FB228E600E80816 /* Profile+Shop.swift */; };
 		E8E3449D2010C4780049385F /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E935D1FB225B700E80816 /* Payment.swift */; };
 		E8E3449E2010C47B0049385F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88991991FB300CA0079FBDE /* HTTPMethod.swift */; };
 		E8E3449F2010C47B0049385F /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C55F401FB363BC00B20F93 /* HTTPRequest.swift */; };
@@ -291,8 +287,6 @@
 		E84E935D1FB225B700E80816 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		E84E93601FB2275700E80816 /* JSONEncoder+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Defaults.swift"; sourceTree = "<group>"; };
 		E84E93611FB2275700E80816 /* JSONDecoder+Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Defaults.swift"; sourceTree = "<group>"; };
-		E84E93661FB228E600E80816 /* Profile+Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+Shop.swift"; sourceTree = "<group>"; };
-		E84E93671FB228E600E80816 /* Profile+Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+Device.swift"; sourceTree = "<group>"; };
 		E84E93681FB228E600E80816 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E87FF3F51FB5F0CB00DAB089 /* NetworkService+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Error.swift"; sourceTree = "<group>"; };
 		E88991931FB2F5930079FBDE /* SatispayInStoreConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatispayInStoreConfig.swift; sourceTree = "<group>"; };
@@ -554,8 +548,6 @@
 			isa = PBXGroup;
 			children = (
 				E84E93681FB228E600E80816 /* Profile.swift */,
-				E84E93671FB228E600E80816 /* Profile+Device.swift */,
-				E84E93661FB228E600E80816 /* Profile+Shop.swift */,
 				E84E935D1FB225B700E80816 /* Payment.swift */,
 				E8AFC61222083B0A003A1839 /* ProfilePicture.swift */,
 			);
@@ -867,7 +859,6 @@
 				E8B286BF1FD05A18004013F4 /* HTTPResponse.swift in Sources */,
 				E8C55F381FB342E700B20F93 /* Keychain+Keys.swift in Sources */,
 				E84E930B1FB20A1100E80816 /* PaymentsListRequest.swift in Sources */,
-				E84E93691FB228E600E80816 /* Profile+Shop.swift in Sources */,
 				E84E93151FB20A1100E80816 /* DHVerificationResponse.swift in Sources */,
 				E84E93201FB20A1100E80816 /* DHController+Verification.swift in Sources */,
 				E8026B6521EE21A800E99599 /* PaymentsService.swift in Sources */,
@@ -923,7 +914,6 @@
 				E8C55F171FB342C200B20F93 /* ProtocolRequestSignerError.swift in Sources */,
 				E84E930E1FB20A1100E80816 /* PaymentUpdateRequest.swift in Sources */,
 				E8DE9C3D1FBDC87B00B094D2 /* NetworkService+Notification.swift in Sources */,
-				E84E936A1FB228E600E80816 /* Profile+Device.swift in Sources */,
 				E8C55F181FB342C200B20F93 /* ProtocolResponseVerifierError.swift in Sources */,
 				E84E932F1FB20A1200E80816 /* DailyClosureService.swift in Sources */,
 				E84E93121FB20A1100E80816 /* DHVerificationRequest.swift in Sources */,
@@ -987,7 +977,6 @@
 				E8E344BC2010C48A0049385F /* DHChallengeRequest.swift in Sources */,
 				E8E344CA2010C48A0049385F /* PaymentsListRequest.swift in Sources */,
 				E8E344AD2010C4850049385F /* DHController+Context.swift in Sources */,
-				E8E3449C2010C4780049385F /* Profile+Shop.swift in Sources */,
 				E8E344A12010C47B0049385F /* NetworkService.swift in Sources */,
 				E8E344D22010C48E0049385F /* DHService.swift in Sources */,
 				E8E344942010C4710049385F /* KeychainEntry.swift in Sources */,
@@ -1030,7 +1019,6 @@
 				E8E344892010C4660049385F /* CryptoError.swift in Sources */,
 				E8E344A02010C47B0049385F /* HTTPResponse.swift in Sources */,
 				E8E344A22010C47B0049385F /* NetworkService+Error.swift in Sources */,
-				E8E3449B2010C4780049385F /* Profile+Device.swift in Sources */,
 				E8062F2A21EF3415004BD1CA /* PaginatedDataResponse.swift in Sources */,
 				E8E344952010C4710049385F /* KeychainError.swift in Sources */,
 				E8E3448B2010C4660049385F /* OTP.swift in Sources */,
