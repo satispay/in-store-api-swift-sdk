@@ -16,18 +16,18 @@ public struct Profile: Decodable {
     public let address: Address?
     public let geolocation: Geolocation?
     public let images: [Picture]?
-    public let localization: Localization
-    public let acceptance: Acceptance
+    public let localization: Localization?
+    public let acceptance: Acceptance?
     public let costCentre: String?
     public let qrCodeIdentifier: String?
-    public let rawKind: String
+    public let rawModel: String?
 
-    public var kind: Kind {
-        if let identifier = Kind.Identifier(rawValue: rawKind) {
+    public var model: Model {
+        if let rawModel = rawModel, let identifier = Model.Identifier(rawValue: rawModel) {
             return .identifier(identifier)
         }
 
-        return .unknown(rawKind)
+        return .unknown(rawModel)
     }
 
     enum CodingKeys: String, CodingKey {
@@ -42,7 +42,7 @@ public struct Profile: Decodable {
         case acceptance
         case costCentre = "cost_centre"
         case qrCodeIdentifier = "qr_code_identifier"
-        case rawKind = "type"
+        case rawModel = "model"
 
     }
 
@@ -56,11 +56,11 @@ public struct Profile: Decodable {
         address = try? container.decode(Address.self, forKey: .address)
         geolocation = try? container.decode(Geolocation.self, forKey: .geolocation)
         images = try? container.decode([Picture].self, forKey: .images)
-        localization = try container.decode(Localization.self, forKey: .localization)
-        acceptance = try container.decode(Acceptance.self, forKey: .acceptance)
+        localization = try? container.decode(Localization.self, forKey: .localization)
+        acceptance = try? container.decode(Acceptance.self, forKey: .acceptance)
         costCentre = try? container.decode(String.self, forKey: .costCentre)
         qrCodeIdentifier = try? container.decode(String.self, forKey: .qrCodeIdentifier)
-        rawKind = try container.decode(String.self, forKey: .rawKind)
+        rawModel = try container.decode(String.self, forKey: .rawModel)
 
     }
 
@@ -125,9 +125,9 @@ public extension Profile {
         case none = "NONE"
     }
 
-    enum Kind {
+    enum Model {
         case identifier(Identifier)
-        case unknown(String)
+        case unknown(String?)
 
         public enum Identifier: String {
             case brickAndMortar = "BRICK_AND_MORTAR"
