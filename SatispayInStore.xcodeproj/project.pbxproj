@@ -35,6 +35,8 @@
 		E8026B7121EE298800E99599 /* PaymentUpdateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8026B6F21EE298800E99599 /* PaymentUpdateAction.swift */; };
 		E8062F2921EF3415004BD1CA /* PaginatedDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8062F2821EF3415004BD1CA /* PaginatedDataResponse.swift */; };
 		E8062F2A21EF3415004BD1CA /* PaginatedDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8062F2821EF3415004BD1CA /* PaginatedDataResponse.swift */; };
+		E8116CEC230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8116CEB230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift */; };
+		E8116CED230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8116CEB230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift */; };
 		E815C7E81FC31905002B7246 /* EnvironmentKeychainConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815C7E71FC31905002B7246 /* EnvironmentKeychainConfig.swift */; };
 		E83A868F1FC80E5900C705B0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A868E1FC80E5900C705B0 /* NavigationController.swift */; };
 		E83A86921FC80EAC00C705B0 /* ProfileRequiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86911FC80EAC00C705B0 /* ProfileRequiring.swift */; };
@@ -239,6 +241,7 @@
 		E8026B6B21EE27EC00E99599 /* PaymentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsController.swift; sourceTree = "<group>"; };
 		E8026B6F21EE298800E99599 /* PaymentUpdateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentUpdateAction.swift; sourceTree = "<group>"; };
 		E8062F2821EF3415004BD1CA /* PaginatedDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedDataResponse.swift; sourceTree = "<group>"; };
+		E8116CEB230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Headers.swift"; sourceTree = "<group>"; };
 		E815C7E71FC31905002B7246 /* EnvironmentKeychainConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentKeychainConfig.swift; sourceTree = "<group>"; };
 		E83A868E1FC80E5900C705B0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E83A86911FC80EAC00C705B0 /* ProfileRequiring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequiring.swift; sourceTree = "<group>"; };
@@ -558,6 +561,7 @@
 			isa = PBXGroup;
 			children = (
 				E800598A1FB45DD9005E8DD6 /* DispatchWorkItem+CancellableOperation.swift */,
+				E8116CEB230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift */,
 				E84E93611FB2275700E80816 /* JSONDecoder+Defaults.swift */,
 				E84E93601FB2275700E80816 /* JSONEncoder+Defaults.swift */,
 				E8DE9C3C1FBDC87B00B094D2 /* NetworkService+Notification.swift */,
@@ -909,6 +913,7 @@
 				E84E930C1FB20A1100E80816 /* DHChallengeRequest.swift in Sources */,
 				E8AFC61622087921003A1839 /* PaymentCreationRequest.swift in Sources */,
 				E84E935E1FB225B700E80816 /* Payment.swift in Sources */,
+				E8116CEC230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift in Sources */,
 				E84E93261FB20A1100E80816 /* ShopsController.swift in Sources */,
 				E84E93101FB20A1100E80816 /* DHChallengeResponse.swift in Sources */,
 				E8C55F171FB342C200B20F93 /* ProtocolRequestSignerError.swift in Sources */,
@@ -971,6 +976,7 @@
 				E8026B7121EE298800E99599 /* PaymentUpdateAction.swift in Sources */,
 				E8E344872010C4620049385F /* BigInteger.swift in Sources */,
 				E8E344932010C4710049385F /* Keychain+Overloads.swift in Sources */,
+				E8116CED230ACA9400DE95A6 /* HTTPURLResponse+Headers.swift in Sources */,
 				E8E344D02010C48E0049385F /* DailyClosureService.swift in Sources */,
 				E8E344D32010C48E0049385F /* ProfileService.swift in Sources */,
 				E8E344A72010C47E0049385F /* ProtocolResponseVerifier.swift in Sources */,

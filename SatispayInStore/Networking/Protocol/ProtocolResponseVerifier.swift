@@ -90,7 +90,7 @@ struct ProtocolResponseVerifier {
 
     private func validateSignature(_ response: HTTPURLResponse, data: Data) throws {
 
-        guard let authenticate = response.allHeaderFields["Www-Authenticate"] as? String else {
+        guard let authenticate = response.value(forHeaderField: "Www-Authenticate") as? String else {
             throw ProtocolResponseVerifierError.malformedResponse
         }
 
@@ -103,19 +103,15 @@ struct ProtocolResponseVerifier {
             throw ProtocolResponseVerifierError.malformedResponse
         }
 
-        let toSign = headers.compactMap({ name -> String? in
-
-            for (key, value) in response.allHeaderFields {
-
-                if (key as? String)?.caseInsensitiveCompare(name) == .orderedSame {
+        let toSign = headers
+            .compactMap { name -> String? in
+                for (key, value) in response.allHeaderFields where (key as? String)?.caseInsensitiveCompare(name) == .orderedSame {
                     return "\(name): \(value)"
                 }
 
+                return nil
             }
-
-            return nil
-
-        }).joined(separator: "\n")
+            .joined(separator: "\n")
 
         guard let dataToSign = toSign.data(using: String.Encoding.utf8) else {
             throw ProtocolResponseVerifierError.malformedResponse
@@ -153,11 +149,9 @@ struct ProtocolResponseVerifier {
     private func validateDigest(_ response: HTTPURLResponse, data: Data) throws {
 
         //  Check whether the digest can be verified
-        guard let digest = response.allHeaderFields["Digest"] as? String, digest.components(separatedBy: "=").count > 1,
+        guard let digest = response.value(forHeaderField: "Digest") as? String, digest.components(separatedBy: "=").count > 1,
             let digestAlgorithm = digest.components(separatedBy: "=").first?.uppercased() else {
-
             throw ProtocolResponseVerifierError.malformedResponse
-
         }
 
         //  Compute the hash digest

@@ -15,11 +15,9 @@ public struct HTTPResponse {
     public let headers: [AnyHashable: Any]
 
     init(urlResponse: HTTPURLResponse) {
-
         url = urlResponse.url
         statusCode = urlResponse.statusCode
         headers = urlResponse.allHeaderFields
-
     }
 
 }
