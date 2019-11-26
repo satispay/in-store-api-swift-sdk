@@ -1,4 +1,4 @@
 [submodule "OpenSSL"]
 	path = OpenSSL
-	url = https://github.com/pNre/OpenSSL
+url=https://github.com/satispay/OpenSSL
         ignore = dirty
