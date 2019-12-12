@@ -19,4 +19,11 @@ public class ProfileController: NetworkController {
 
     }
 
+    public func updateMe(acceptance: Acceptance, completionHandler: @escaping CompletionHandler<Profile>) -> CancellableOperation {
+        
+        let request = ProfileAcceptanceRequest(acceptance: acceptance)
+        return ProfileService.acceptance(request: request).request { (response, _, error) in
+            completionHandler(response, error)
+        }
+    }
 }

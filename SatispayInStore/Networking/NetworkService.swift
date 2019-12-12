@@ -66,7 +66,7 @@ extension NetworkService {
 
         var request = URLRequest(url: url)
 
-        request.httpMethod = method.rawValue
+        request.httpMethod = method.rawValue.uppercased()
         request.httpBody = body
 
         if let customHeaders = headers {

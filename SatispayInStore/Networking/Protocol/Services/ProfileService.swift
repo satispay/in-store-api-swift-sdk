@@ -11,7 +11,7 @@ import Foundation
 public enum ProfileService {
 
     case me
-
+    case acceptance(request: ProfileAcceptanceRequest)
 }
 
 extension ProfileService: NetworkService {
@@ -22,7 +22,7 @@ extension ProfileService: NetworkService {
 
     public var path: String? {
         switch self {
-        case .me:
+        case .me, .acceptance:
             return "me"
         }
     }
@@ -35,11 +35,17 @@ extension ProfileService: NetworkService {
         switch self {
         case .me:
             return .get
+        case .acceptance:
+            return .patch
         }
     }
 
     public var body: Data? {
-        return nil
+        switch self {
+        case .me: return nil
+        case .acceptance(let request):
+            return try? JSONEncoder.encode(request)
+        }
     }
 
     public var headers: [String: String]? {
