@@ -28,6 +28,8 @@ extension PaymentsController {
                               metadata: PaymentCreationRequest.Metadata?,
                               callbackURL: URL?,
                               parentPaymentUid: String?,
+                              consumerUid: String?,
+                              comment: String?,
                               idempotencyKey: String?,
                               completionHandler: @escaping CompletionHandler<Payment>) -> CancellableOperation {
 
@@ -37,7 +39,9 @@ extension PaymentsController {
                                              expirationDate: expirationDate,
                                              metadata: metadata,
                                              callbackURL: callbackURL,
-                                             parentPaymentUid: parentPaymentUid)
+                                             parentPaymentUid: parentPaymentUid,
+                                             consumerUid: consumerUid,
+                                             comment: comment)
 
         return PaymentsService.createPayment(request: request, idempotencyKey: idempotencyKey).request { (response, _, error) in
             completionHandler(response, error)

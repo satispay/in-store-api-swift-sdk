@@ -14,8 +14,9 @@ extension NetworkService {
 
     public func request<Response: Decodable>(completionHandler: @escaping CompletionHandler<Response>) -> HTTPRequest {
 
-        return request(mapping: { try JSONDecoder.decode(Response.self, from: $0) },
-                       completionHandler: completionHandler)
+        return request(mapping: {
+            try JSONDecoder.decode(Response.self, from: $0)
+        }, completionHandler: completionHandler)
 
     }
 

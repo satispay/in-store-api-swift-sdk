@@ -24,6 +24,7 @@ public struct Payment: Decodable, Equatable {
     public let statusOwnership: Bool?
     public let statusOwner: StatusOwner?
     public let codeIdentifier: String?
+    public let comment: String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -41,7 +42,7 @@ public struct Payment: Decodable, Equatable {
         case statusOwnership = "status_ownership"
         case statusOwner = "status_owner"
         case codeIdentifier = "code_identifier"
-
+        case comment
     }
 
     public init(from decoder: Decoder) throws {
@@ -62,7 +63,7 @@ public struct Payment: Decodable, Equatable {
         statusOwnership = try? container.decode(Bool.self, forKey: .statusOwnership)
         statusOwner = try? container.decode(StatusOwner.self, forKey: .statusOwner)
         codeIdentifier = try? container.decode(String.self, forKey: .codeIdentifier)
-
+        comment = try? container.decode(String.self, forKey: .comment)
     }
 
 }
