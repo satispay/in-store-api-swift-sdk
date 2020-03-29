@@ -29,6 +29,8 @@
 		97491541242DF956007FD83A /* ConsumerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749153F242DF956007FD83A /* ConsumerResponse.swift */; };
 		97A715AC239FA08100799F2F /* ProfileAcceptanceRequrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */; };
 		97A715AE239FA60200799F2F /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
+		97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
+		97E5B00C2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
 		E80059791FB44D8C005E8DD6 /* DHController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059781FB44D8C005E8DD6 /* DHController+Context.swift */; };
 		E80059861FB45A8F005E8DD6 /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059851FB45A8E005E8DD6 /* BigInteger.swift */; };
 		E80059891FB45DBB005E8DD6 /* CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */; };
@@ -244,6 +246,7 @@
 		9749153F242DF956007FD83A /* ConsumerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerResponse.swift; sourceTree = "<group>"; };
 		97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAcceptanceRequrest.swift; sourceTree = "<group>"; };
 		97A715AD239FA60200799F2F /* Acceptance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceptance.swift; sourceTree = "<group>"; };
+		97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMeRequest.swift; sourceTree = "<group>"; };
 		E80059781FB44D8C005E8DD6 /* DHController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DHController+Context.swift"; sourceTree = "<group>"; };
 		E80059851FB45A8E005E8DD6 /* BigInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInteger.swift; sourceTree = "<group>"; };
 		E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableOperation.swift; sourceTree = "<group>"; };
@@ -520,6 +523,7 @@
 				E8C55F671FB3799200B20F93 /* UpdateLocationResponse.swift */,
 				97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */,
 				9749153F242DF956007FD83A /* ConsumerResponse.swift */,
+				97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -897,6 +901,7 @@
 				E84E93321FB20A1200E80816 /* DHService.swift in Sources */,
 				E84E93131FB20A1100E80816 /* DHEncryptedResponse.swift in Sources */,
 				E8C55F341FB342E700B20F93 /* HMAC.swift in Sources */,
+				97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */,
 				E8C55F411FB363BC00B20F93 /* HTTPRequest.swift in Sources */,
 				E84E930F1FB20A1100E80816 /* DHExchangeRequest.swift in Sources */,
 				97A715AC239FA08100799F2F /* ProfileAcceptanceRequrest.swift in Sources */,
@@ -985,6 +990,7 @@
 				E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */,
 				E8E344BD2010C48A0049385F /* DHChallengeResponse.swift in Sources */,
 				E8E344842010C4550049385F /* EnvironmentKeychainConfig.swift in Sources */,
+				97E5B00C2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */,
 				E8E3448A2010C4660049385F /* KeyDerivation.swift in Sources */,
 				E8E344992010C4740049385F /* NetworkService+Notification.swift in Sources */,
 				E8E344CF2010C48E0049385F /* AnalyticsService.swift in Sources */,
