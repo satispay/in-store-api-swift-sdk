@@ -63,7 +63,7 @@ public struct PaymentCreationRequest: Encodable {
 extension PaymentCreationRequest {
 
     public enum Flow: String, Encodable {
-        case marchUser = "MATCH_USER"
+        case matchUser = "MATCH_USER"
         case matchCode = "MATCH_CODE"
         case refund = "REFUND"
     }
