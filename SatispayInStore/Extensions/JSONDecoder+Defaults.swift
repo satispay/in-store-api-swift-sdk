@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension JSONDecoder {
+public extension JSONDecoder {
 
     /// ISO8601 date formatter.
     private static let formatter: DateFormatter = {
@@ -24,7 +24,7 @@ extension JSONDecoder {
     /// Returns a `JSONDecoder` that uses the `ISO8601` as date decoding strategy.
     ///
     /// - Returns: JSON decoder
-    static func decoder() -> JSONDecoder {
+    public static func decoder() -> JSONDecoder {
 
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(formatter)
@@ -39,7 +39,7 @@ extension JSONDecoder {
     /// - Parameter type: JSON representation
     /// - Returns: Decoded value
     /// - Throws: Anything thrown by the `decode` instance method
-    static func decode<T>(_ type: T.Type, from data: Data) throws -> T where T: Decodable {
+    public static func decode<T>(_ type: T.Type, from data: Data) throws -> T where T: Decodable {
         return try decoder().decode(type, from: data)
     }
 

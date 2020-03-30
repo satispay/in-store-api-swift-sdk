@@ -10,7 +10,7 @@ import Foundation
 
 public enum ProfileService {
 
-    case me
+    case me(request: ProfileMeRequest)
     case acceptance(request: ProfileAcceptanceRequest)
 }
 
@@ -49,7 +49,22 @@ extension ProfileService: NetworkService {
     }
 
     public var headers: [String: String]? {
-        return nil
+        switch self {
+        case .me(let request):
+            var headers = [String: String]()
+            
+            #if os(iOS)
+            headers["x-satispay-os"] = UIDevice.current.systemName
+            #elseif os(macOS)
+            headers["x-satispay-os"] = "macOS"
+            #endif
+            
+            headers["x-satispay-apph"] = request.softwareHouse
+            headers["x-satispay-appn"] = request.softwareName
+            return headers
+            
+        default: return nil
+        }
     }
 
     public var requiresSignature: Bool {

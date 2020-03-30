@@ -11,12 +11,11 @@ import Foundation
 public class ProfileController: NetworkController {
 
     /// Shop profile info.
-    public func me(completionHandler: @escaping CompletionHandler<Profile>) -> CancellableOperation {
+    public func me(request: ProfileMeRequest, completionHandler: @escaping CompletionHandler<Profile>) -> CancellableOperation {
 
-        return ProfileService.me.request { (response, _, error) in
+        return ProfileService.me(request: request).request { (response, _, error) in
             completionHandler(response, error)
         }
-
     }
 
     public func updateMe(acceptance: Acceptance, completionHandler: @escaping CompletionHandler<Profile>) -> CancellableOperation {

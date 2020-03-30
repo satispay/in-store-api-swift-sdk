@@ -184,7 +184,8 @@ extension RootViewController {
 
     private func presentMainController() {
 
-        _ = ProfileController().me { [weak self] (profile, error) in
+        let request = ProfileMeRequest(softwareName: "Satispay Business", softwareHouse: "Satispay")
+        _ = ProfileController().me(request: request) { [weak self] (profile, error) in
 
             guard let controller = self else {
                 return
