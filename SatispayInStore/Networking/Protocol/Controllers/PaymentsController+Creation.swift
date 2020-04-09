@@ -29,7 +29,7 @@ extension PaymentsController {
                               callbackURL: URL?,
                               parentPaymentUid: String?,
                               consumerUid: String?,
-                              comment: String?,
+                              paymentDescription: String?,
                               idempotencyKey: String?,
                               completionHandler: @escaping CompletionHandler<Payment>) -> CancellableOperation {
 
@@ -41,7 +41,7 @@ extension PaymentsController {
                                              callbackURL: callbackURL,
                                              parentPaymentUid: parentPaymentUid,
                                              consumerUid: consumerUid,
-                                             comment: comment)
+                                             paymentDescription: paymentDescription)
 
         return PaymentsService.createPayment(request: request, idempotencyKey: idempotencyKey).request { (response, _, error) in
             completionHandler(response, error)
