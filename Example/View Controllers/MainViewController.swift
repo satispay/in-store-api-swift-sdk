@@ -74,7 +74,7 @@ class MainViewController: UITableViewController {
 extension MainViewController: ProfileRequiring {
 
     func configure(with profile: Profile) {
-        title = profile.shop.name
+        title = profile.name
     }
 
 }
@@ -241,6 +241,8 @@ extension MainViewController {
                                              metadata: nil,
                                              callbackURL: nil,
                                              parentPaymentUid: transaction.id,
+                                             consumerUid: nil,
+                                             paymentDescription: nil,
                                              idempotencyKey: UUID().uuidString) { [weak self] (_, error) in
 
             guard error == nil else {
