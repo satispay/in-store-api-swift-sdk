@@ -19,7 +19,7 @@ public struct Payment: Decodable, Equatable {
     public let expired: Bool
     public let expireDate: Date?
     public let dailyClosure: DailyClosure?
-    public let sender: Sender
+    public let sender: Sender?
     public let receiver: Receiver
     public let statusOwnership: Bool?
     public let statusOwner: StatusOwner?
@@ -60,7 +60,7 @@ public struct Payment: Decodable, Equatable {
         expired = try container.decode(Bool.self, forKey: .expired)
         expireDate = try? container.decode(Date.self, forKey: .expireDate)
         dailyClosure = try? container.decode(DailyClosure.self, forKey: .dailyClosure)
-        sender = try container.decode(Sender.self, forKey: .sender)
+        sender = try? container.decode(Sender.self, forKey: .sender)
         receiver = try container.decode(Receiver.self, forKey: .receiver)
         statusOwnership = try? container.decode(Bool.self, forKey: .statusOwnership)
         statusOwner = try? container.decode(StatusOwner.self, forKey: .statusOwner)
