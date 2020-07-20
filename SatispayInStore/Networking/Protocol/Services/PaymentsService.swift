@@ -35,6 +35,17 @@ extension PaymentsService: NetworkService {
             return "/\(id)"
         }
     }
+    
+    public var queryItems: [URLQueryItem]? {
+        switch self {
+        case .payments(let request, _):
+            return request.status?.map { status -> URLQueryItem in
+                return .init(name: "status", value: status.rawValue)
+            }
+        default:
+            return nil
+        }
+    }
 
     public var queryParameters: [String: Any]? {
         switch self {

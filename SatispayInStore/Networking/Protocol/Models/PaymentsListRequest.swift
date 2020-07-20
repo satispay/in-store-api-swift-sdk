@@ -10,19 +10,18 @@ import Foundation
 
 public struct PaymentsListRequest: Encodable {
 
-    let status: Payment.Status?
+    let status: [Payment.Status]?
     let startingAfter: String?
     let limit: UInt?
 
     enum CodingKeys: String, CodingKey {
 
-        case status
         case startingAfter = "starting_after"
         case limit
 
     }
 
-    public init(status: Payment.Status?, startingAfter: String?, limit: UInt?) {
+    public init(status: [Payment.Status]?, startingAfter: String?, limit: UInt?) {
 
         self.status = status
         self.startingAfter = startingAfter

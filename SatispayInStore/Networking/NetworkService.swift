@@ -18,6 +18,9 @@ public protocol NetworkService {
 
     /// Query parameters
     var queryParameters: [String: Any]? { get }
+    
+    /// Query items
+    var queryItems: [URLQueryItem]? { get }
 
     /// Request method
     var method: HTTPMethod { get }
@@ -34,6 +37,14 @@ public protocol NetworkService {
     /// Whether to verify the response
     var requiresVerification: Bool { get }
 
+}
+
+public extension NetworkService {
+    
+    var queryItems: [URLQueryItem]? {
+        return nil
+    }
+    
 }
 
 extension NetworkService {
@@ -57,6 +68,12 @@ extension NetworkService {
         components.queryItems = params.map { (entry) in
             return URLQueryItem(name: entry.key, value: String(describing: entry.value))
         }
+        
+        guard let queryItems = queryItems else {
+            return components.url!
+        }
+        
+        components.queryItems = (components.queryItems ?? []) + queryItems
 
         return components.url!
 
