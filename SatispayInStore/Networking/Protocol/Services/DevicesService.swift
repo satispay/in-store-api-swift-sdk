@@ -24,7 +24,7 @@ extension DevicesService: NetworkService {
         return nil
     }
 
-    public var queryParameters: [String: Any]? {
+    public var queryParameters: [URLQueryItem]? {
         return nil
     }
 

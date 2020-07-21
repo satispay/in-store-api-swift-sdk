@@ -28,7 +28,7 @@ extension AnalyticsService: NetworkService {
         }
     }
 
-    public var queryParameters: [String: Any]? {
+    public var queryParameters: [URLQueryItem]? {
         return nil
     }
 

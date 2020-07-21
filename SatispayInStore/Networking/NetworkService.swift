@@ -17,10 +17,7 @@ public protocol NetworkService {
     var path: String? { get }
 
     /// Query parameters
-    var queryParameters: [String: Any]? { get }
-    
-    /// Query items
-    var queryItems: [URLQueryItem]? { get }
+    var queryParameters: [URLQueryItem]? { get }
 
     /// Request method
     var method: HTTPMethod { get }
@@ -37,14 +34,6 @@ public protocol NetworkService {
     /// Whether to verify the response
     var requiresVerification: Bool { get }
 
-}
-
-public extension NetworkService {
-    
-    var queryItems: [URLQueryItem]? {
-        return nil
-    }
-    
 }
 
 extension NetworkService {
@@ -64,16 +53,8 @@ extension NetworkService {
         }
 
         var components = URLComponents(url: partialURL, resolvingAgainstBaseURL: false)!
-
-        components.queryItems = params.map { (entry) in
-            return URLQueryItem(name: entry.key, value: String(describing: entry.value))
-        }
         
-        guard let queryItems = queryItems else {
-            return components.url!
-        }
-        
-        components.queryItems = (components.queryItems ?? []) + queryItems
+        components.queryItems = params
 
         return components.url!
 
@@ -110,6 +91,17 @@ extension NetworkService {
 
         return signed
 
+    }
+    
+    func queryItemsMap(_ parameters: [String: Any]?) -> [URLQueryItem]? {
+        
+        return parameters?.flatMap { (key, value) -> [URLQueryItem] in
+            guard let values = value as? [String] else {
+                return [URLQueryItem(name: key, value: value as? String)]
+            }
+            return values.map { URLQueryItem(name: key, value: $0) }
+        }
+        
     }
 
 }

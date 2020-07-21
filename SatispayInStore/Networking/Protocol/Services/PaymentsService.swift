@@ -35,26 +35,16 @@ extension PaymentsService: NetworkService {
             return "/\(id)"
         }
     }
-    
-    public var queryItems: [URLQueryItem]? {
-        switch self {
-        case .payments(let request, _):
-            return request.status?.map { status -> URLQueryItem in
-                return .init(name: "status", value: status.rawValue)
-            }
-        default:
-            return nil
-        }
-    }
 
-    public var queryParameters: [String: Any]? {
+    public var queryParameters: [URLQueryItem]? {
         switch self {
         case .payments(let request, _):
             guard let data = try? JSONEncoder.encode(request) else {
                 return nil
             }
-
-            return (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any]
+            let encoded = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any]
+            return queryItemsMap(encoded)
+            
         case .createPayment:
             return nil
         case .updatePayment:

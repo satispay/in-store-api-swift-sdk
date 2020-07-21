@@ -16,6 +16,7 @@ public struct PaymentsListRequest: Encodable {
 
     enum CodingKeys: String, CodingKey {
 
+        case status
         case startingAfter = "starting_after"
         case limit
 
