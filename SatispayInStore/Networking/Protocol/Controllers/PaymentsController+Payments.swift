@@ -20,7 +20,7 @@ extension PaymentsController {
     ///             your subsequent call can include `1204` as offset in order to fetch the next page of the list.
     ///   - limit: Number of objects to be returned, between 1 and 100.
     ///   - analytics: Device and client info.
-    public func payments(status: Payment.Status? = nil,
+    public func payments(status: [Payment.Status]? = nil,
                          startingAfter: String? = nil,
                          limit: UInt? = nil,
                          analytics: PaymentsListRequest.Analytics,

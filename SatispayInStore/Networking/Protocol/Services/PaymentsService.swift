@@ -36,14 +36,15 @@ extension PaymentsService: NetworkService {
         }
     }
 
-    public var queryParameters: [String: Any]? {
+    public var queryParameters: [URLQueryItem]? {
         switch self {
         case .payments(let request, _):
             guard let data = try? JSONEncoder.encode(request) else {
                 return nil
             }
-
-            return (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any]
+            let encoded = (try? JSONSerialization.jsonObject(with: data, options: [])) as? [String: Any]
+            return queryItemsMap(encoded)
+            
         case .createPayment:
             return nil
         case .updatePayment:

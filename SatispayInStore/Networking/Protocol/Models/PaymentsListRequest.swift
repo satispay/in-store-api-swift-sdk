@@ -10,7 +10,7 @@ import Foundation
 
 public struct PaymentsListRequest: Encodable {
 
-    let status: Payment.Status?
+    let status: [Payment.Status]?
     let startingAfter: String?
     let limit: UInt?
 
@@ -22,7 +22,7 @@ public struct PaymentsListRequest: Encodable {
 
     }
 
-    public init(status: Payment.Status?, startingAfter: String?, limit: UInt?) {
+    public init(status: [Payment.Status]?, startingAfter: String?, limit: UInt?) {
 
         self.status = status
         self.startingAfter = startingAfter

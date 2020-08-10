@@ -26,7 +26,7 @@ extension ConsumersService: NetworkService {
         }
     }
     
-    public var queryParameters: [String : Any]? {
+    public var queryParameters: [URLQueryItem]? {
         switch self {
         case .consumer:
             return nil
