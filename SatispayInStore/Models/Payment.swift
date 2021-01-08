@@ -124,7 +124,27 @@ extension Payment {
 
         public let id: String
         public let type: String
+        public let name: String?
+        public let profilePictures: PaginatedDataResponse<Picture>?
 
+        enum CodingKeys: String, CodingKey {
+
+            case id
+            case type
+            case name
+            case profilePictures = "profile_pictures"
+
+        }
+
+        public init(from decoder: Decoder) throws {
+
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+
+            id = try container.decode(String.self, forKey: .id)
+            type = try container.decode(String.self, forKey: .type)
+            name = try? container.decode(String.self, forKey: .name)
+            profilePictures = try? container.decode(PaginatedDataResponse<Picture>.self, forKey: .profilePictures)
+        }
     }
 
     public struct StatusOwner: Decodable, Equatable {
