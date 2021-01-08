@@ -68,6 +68,19 @@ class MainViewController: UITableViewController {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        paymentsController.createPayment(flow: .matchCode, amountUnit: 300, currency: "EUR", expirationDate: Date(timeIntervalSinceNow: 3600), metadata: nil, callbackURL: nil, parentPaymentUid: nil, consumerUid: nil, paymentDescription: "Test payment with QRCode", idempotencyKey: nil) { (payment, error) in
+//            
+//            guard let codeIdentifier = payment?.codeIdentifier else {
+//                print("Payment generation error")
+//                return
+//            }
+//            
+//            print("https://staging.satispay.com/download/qrcode/\(codeIdentifier)")
+//        }
+    }
 }
 
 // MARK: - ProfileRequiring
@@ -115,7 +128,7 @@ extension MainViewController {
 
         let transaction = transactions[indexPath.section][indexPath.row]
 
-        cell.textLabel?.text = "\(transaction.sender.name ?? "Unknown") (\(transaction.type ?? "unknown type"))"
+        cell.textLabel?.text = "\(transaction.sender?.name ?? "Unknown") (\(transaction.type ?? "unknown type"))"
         cell.detailTextLabel?.text = {
             let amount = NSDecimalNumber(value: transaction.amountUnit).dividing(by: NSDecimalNumber(value: 100))
             return currencyFormatter.string(from: amount)
@@ -284,7 +297,7 @@ extension MainViewController {
 
         group.enter()
 
-        _ = paymentsController.payments(status: .pending, analytics: analytics) { [weak self] (response, _) in
+        _ = paymentsController.payments(status: [.pending], analytics: analytics) { [weak self] (response, _) in
 
             if let response = response {
                 self?.updatePendingTransactions(from: response)

@@ -27,6 +27,8 @@
 		9749153E242DEF37007FD83A /* ConsumersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97491539242D5EFB007FD83A /* ConsumersService.swift */; };
 		97491540242DF956007FD83A /* ConsumerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749153F242DF956007FD83A /* ConsumerResponse.swift */; };
 		97491541242DF956007FD83A /* ConsumerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749153F242DF956007FD83A /* ConsumerResponse.swift */; };
+		974A366024F7F361006CB5CD /* SatispayInStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; };
+		974A366124F7F361006CB5CD /* SatispayInStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		97A715AC239FA08100799F2F /* ProfileAcceptanceRequrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */; };
 		97A715AE239FA60200799F2F /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
@@ -213,7 +215,6 @@
 		E8E344D42010C48E0049385F /* ShopsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93001FB20A1100E80816 /* ShopsService.swift */; };
 		E8E3AA802024AF5900732698 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3AA7E2024AF5900732698 /* libssl.a */; };
 		E8E3AA812024AF5900732698 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3AA7F2024AF5900732698 /* libcrypto.a */; };
-		E8F02F471FC732940090F7DE /* SatispayInStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,20 @@
 			remoteInfo = "SatispayInStore-iOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		974A366224F7F361006CB5CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				974A366124F7F361006CB5CD /* SatispayInStore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		97491539242D5EFB007FD83A /* ConsumersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumersService.swift; sourceTree = "<group>"; };
@@ -368,7 +383,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8F02F471FC732940090F7DE /* SatispayInStore.framework in Frameworks */,
+				974A366024F7F361006CB5CD /* SatispayInStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +749,7 @@
 				E8C75FC61FC6BC90001B5E7A /* Sources */,
 				E8C75FC71FC6BC90001B5E7A /* Frameworks */,
 				E8C75FC81FC6BC90001B5E7A /* Resources */,
+				974A366224F7F361006CB5CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
