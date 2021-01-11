@@ -19,8 +19,8 @@ public struct Payment: Decodable, Equatable {
     public let expired: Bool
     public let expireDate: Date?
     public let dailyClosure: DailyClosure?
-    public let sender: Sender?
-    public let receiver: Receiver
+    public let sender: Actor?
+    public let receiver: Actor
     public let statusOwnership: Bool?
     public let statusOwner: StatusOwner?
     public let codeIdentifier: String?
@@ -60,8 +60,8 @@ public struct Payment: Decodable, Equatable {
         expired = try container.decode(Bool.self, forKey: .expired)
         expireDate = try? container.decode(Date.self, forKey: .expireDate)
         dailyClosure = try? container.decode(DailyClosure.self, forKey: .dailyClosure)
-        sender = try? container.decode(Sender.self, forKey: .sender)
-        receiver = try container.decode(Receiver.self, forKey: .receiver)
+        sender = try? container.decode(Actor.self, forKey: .sender)
+        receiver = try container.decode(Actor.self, forKey: .receiver)
         statusOwnership = try? container.decode(Bool.self, forKey: .statusOwnership)
         statusOwner = try? container.decode(StatusOwner.self, forKey: .statusOwner)
         codeIdentifier = try? container.decode(String.self, forKey: .codeIdentifier)
@@ -91,7 +91,7 @@ extension Payment {
 
     }
 
-    public struct Sender: Decodable, Equatable {
+    public struct Actor: Decodable, Equatable {
 
         public let id: String
         public let type: String
@@ -118,33 +118,6 @@ extension Payment {
 
         }
 
-    }
-
-    public struct Receiver: Decodable, Equatable {
-
-        public let id: String
-        public let type: String
-        public let name: String?
-        public let profilePictures: PaginatedDataResponse<Picture>?
-
-        enum CodingKeys: String, CodingKey {
-
-            case id
-            case type
-            case name
-            case profilePictures = "profile_pictures"
-
-        }
-
-        public init(from decoder: Decoder) throws {
-
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-
-            id = try container.decode(String.self, forKey: .id)
-            type = try container.decode(String.self, forKey: .type)
-            name = try? container.decode(String.self, forKey: .name)
-            profilePictures = try? container.decode(PaginatedDataResponse<Picture>.self, forKey: .profilePictures)
-        }
     }
 
     public struct StatusOwner: Decodable, Equatable {
