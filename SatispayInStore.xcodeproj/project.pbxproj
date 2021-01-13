@@ -29,6 +29,8 @@
 		97491541242DF956007FD83A /* ConsumerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749153F242DF956007FD83A /* ConsumerResponse.swift */; };
 		974A366024F7F361006CB5CD /* SatispayInStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; };
 		974A366124F7F361006CB5CD /* SatispayInStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E84E92B71FB203A700E80816 /* SatispayInStore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		975E642225AF1743002F3771 /* ProfileAcceptanceRequrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */; };
+		975E642625AF174A002F3771 /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		97A715AC239FA08100799F2F /* ProfileAcceptanceRequrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */; };
 		97A715AE239FA60200799F2F /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
@@ -1002,6 +1004,7 @@
 				E8E344A92010C4850049385F /* AnalyticsController.swift in Sources */,
 				E8E344B82010C4850049385F /* PaymentsController+Update.swift in Sources */,
 				E8E344BA2010C48A0049385F /* DailyClosureResponse.swift in Sources */,
+				975E642625AF174A002F3771 /* Acceptance.swift in Sources */,
 				E8E344972010C4740049385F /* JSONDecoder+Defaults.swift in Sources */,
 				E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */,
 				E8E344BD2010C48A0049385F /* DHChallengeResponse.swift in Sources */,
@@ -1033,6 +1036,7 @@
 				E8E344A12010C47B0049385F /* NetworkService.swift in Sources */,
 				E8E344D22010C48E0049385F /* DHService.swift in Sources */,
 				E8E344942010C4710049385F /* KeychainEntry.swift in Sources */,
+				975E642225AF1743002F3771 /* ProfileAcceptanceRequrest.swift in Sources */,
 				E8AFC61422083B0A003A1839 /* Picture.swift in Sources */,
 				E8E344B52010C4850049385F /* ShopsController.swift in Sources */,
 				E8E344AE2010C4850049385F /* DHController+Challenge.swift in Sources */,
@@ -1300,11 +1304,12 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/iOS/OpenSSL";
 				INFOPLIST_FILE = SatispayInStore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenSSL/lib-ios",
+					"$(PROJECT_DIR)/OpenSSL/iphoneos/lib/",
+					"$(PROJECT_DIR)/OpenSSL/iphonesimulator/lib/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-iOS";
 				PRODUCT_NAME = SatispayInStore;
@@ -1329,11 +1334,12 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/iOS/OpenSSL";
 				INFOPLIST_FILE = SatispayInStore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenSSL/lib-ios",
+					"$(PROJECT_DIR)/OpenSSL/iphoneos/lib/",
+					"$(PROJECT_DIR)/OpenSSL/iphonesimulator/lib/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-iOS";
 				PRODUCT_NAME = SatispayInStore;
@@ -1394,7 +1400,10 @@
 				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenSSL/lib-macos";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenSSL/macos/lib",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1421,7 +1430,10 @@
 				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenSSL/lib-macos";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenSSL/macos/lib",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
