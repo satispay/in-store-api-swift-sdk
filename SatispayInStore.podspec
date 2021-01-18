@@ -45,11 +45,11 @@ Pod::Spec.new do |s|
           exit 0
       fi
 
-      ./build.sh
+      ./scripts/build.sh
 
       mkdir -p $MODULE_PATH_IOS
       mkdir -p $MODULE_PATH_MACOS
-      cp -R "$OPENSSL_PATH/include-ios/openssl" "$MODULE_PATH_IOS/"
-      cp -R "$OPENSSL_PATH/include-macos/openssl" "$MODULE_PATH_MACOS/"
+      cp -R "$OPENSSL_PATH/iphoneos/include/openssl" "$MODULE_PATH_IOS/"
+      cp -R "$OPENSSL_PATH/macos/include/openssl" "$MODULE_PATH_MACOS/"
   CMD
 end
