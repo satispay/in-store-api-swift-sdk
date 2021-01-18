@@ -46,6 +46,7 @@ Pod::Spec.new do |s|
       fi
 
       ./scripts/build.sh
+      ./scripts/create-frameworks.sh
 
       mkdir -p $MODULE_PATH_IOS
       mkdir -p $MODULE_PATH_MACOS
