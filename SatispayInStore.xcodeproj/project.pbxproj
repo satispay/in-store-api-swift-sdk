@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -33,12 +33,12 @@
 		97A715AE239FA60200799F2F /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
 		97E5B00C2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
+		A55FF82525CC2AEA00DD8F8B /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */; };
+		A55FF82625CC2AEA00DD8F8B /* OpenSSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E80059791FB44D8C005E8DD6 /* DHController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059781FB44D8C005E8DD6 /* DHController+Context.swift */; };
 		E80059861FB45A8F005E8DD6 /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059851FB45A8E005E8DD6 /* BigInteger.swift */; };
 		E80059891FB45DBB005E8DD6 /* CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */; };
 		E800598B1FB45DD9005E8DD6 /* DispatchWorkItem+CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800598A1FB45DD9005E8DD6 /* DispatchWorkItem+CancellableOperation.swift */; };
-		E80059A71FB46CAF005E8DD6 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E80059A51FB46CAF005E8DD6 /* libssl.a */; };
-		E80059A81FB46CAF005E8DD6 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E80059A61FB46CAF005E8DD6 /* libcrypto.a */; };
 		E8026B6521EE21A800E99599 /* PaymentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8026B6421EE21A800E99599 /* PaymentsService.swift */; };
 		E8026B6C21EE27EC00E99599 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8026B6B21EE27EC00E99599 /* PaymentsController.swift */; };
 		E8026B6D21EE27EC00E99599 /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8026B6B21EE27EC00E99599 /* PaymentsController.swift */; };
@@ -253,6 +253,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A55FF82725CC2AEA00DD8F8B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A55FF82625CC2AEA00DD8F8B /* OpenSSL.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +273,7 @@
 		97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAcceptanceRequrest.swift; sourceTree = "<group>"; };
 		97A715AD239FA60200799F2F /* Acceptance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceptance.swift; sourceTree = "<group>"; };
 		97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMeRequest.swift; sourceTree = "<group>"; };
+		A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = SatispayInStore/Modules/OpenSSL/OpenSSL.xcframework; sourceTree = "<group>"; };
 		E80059781FB44D8C005E8DD6 /* DHController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DHController+Context.swift"; sourceTree = "<group>"; };
 		E80059851FB45A8E005E8DD6 /* BigInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInteger.swift; sourceTree = "<group>"; };
 		E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableOperation.swift; sourceTree = "<group>"; };
@@ -374,8 +386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E80059A71FB46CAF005E8DD6 /* libssl.a in Frameworks */,
-				E80059A81FB46CAF005E8DD6 /* libcrypto.a in Frameworks */,
+				A55FF82525CC2AEA00DD8F8B /* OpenSSL.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +429,7 @@
 		E80059A41FB46CAF005E8DD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */,
 				E8E3AA7F2024AF5900732698 /* libcrypto.a */,
 				E8E3AA7E2024AF5900732698 /* libssl.a */,
 				E80059A61FB46CAF005E8DD6 /* libcrypto.a */,
@@ -708,7 +720,7 @@
 /* Begin PBXLegacyTarget section */
 		E80059991FB46A68005E8DD6 /* OpenSSL */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(SRCROOT)/SatispayInStore/Modules/iOS/OpenSSL $(SRCROOT)/SatispayInStore/Modules/macOS/OpenSSL";
+			buildArgumentsString = "$(SRCROOT)/SatispayInStore/Modules/OpenSSL";
 			buildConfigurationList = E800599A1FB46A68005E8DD6 /* Build configuration list for PBXLegacyTarget "OpenSSL" */;
 			buildPhases = (
 			);
@@ -731,6 +743,7 @@
 				E84E92B31FB203A700E80816 /* Frameworks */,
 				E84E92B41FB203A700E80816 /* Headers */,
 				E84E92B51FB203A700E80816 /* Resources */,
+				A55FF82725CC2AEA00DD8F8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1279,7 +1292,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1297,19 +1311,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/iOS/OpenSSL";
 				INFOPLIST_FILE = SatispayInStore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenSSL/lib-ios",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-iOS";
 				PRODUCT_NAME = SatispayInStore;
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/iOS/**";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1326,19 +1338,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/iOS/OpenSSL";
 				INFOPLIST_FILE = SatispayInStore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OpenSSL/lib-ios",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-iOS";
 				PRODUCT_NAME = SatispayInStore;
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/iOS/**";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1352,7 +1362,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.satispay.SatispayInStore.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1369,7 +1382,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.satispay.SatispayInStore.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1393,7 +1409,11 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/macOS/OpenSSL";
 				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenSSL/lib-macos";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
@@ -1420,7 +1440,11 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/macOS/OpenSSL";
 				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenSSL/lib-macos";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
