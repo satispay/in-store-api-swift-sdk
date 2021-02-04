@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
   #s.osx.deployment_target = '10.10'
 
   s.source_files = 'SatispayInStore/**/*.swift'
-  s.preserve_paths = 'SatispayInStore/Modules/**/*', 'OpenSSL/Frameworks/*.xcframework'
+  s.dependency 'OpenSSL-Universal'
   #s.libraries  = 'crypto', 'ssl'
   #s.ios.vendored_libraries = 'OpenSSL/lib-ios/libcrypto.a', 'OpenSSL/lib-ios/libssl.a'
   #s.osx.vendored_libraries = 'OpenSSL/lib-macos/libcrypto.a', 'OpenSSL/lib-macos/libssl.a'
 
   s.pod_target_xcconfig = {
-      'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/**',
-      'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/Frameworks',
+    #   'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/SatispayInStore/SatispayInStore/Modules/**',
+    #   'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/SatispayInStore/OpenSSL/Frameworks',
       'SWIFT_VERSION' => '5.0'
   }
 
@@ -54,20 +54,20 @@ Pod::Spec.new do |s|
 #   CMD
 # end
 
-    s.prepare_command = <<-CMD
-        BASE_PATH="${PWD}"
-        OPENSSL_PATH="$BASE_PATH/OpenSSL"
-        MODULE_PATH="$BASE_PATH/SatispayInStore/Modules/OpenSSL"
+    # s.prepare_command = <<-CMD
+    #     BASE_PATH="${PWD}"
+    #     OPENSSL_PATH="$BASE_PATH/OpenSSL"
+    #     MODULE_PATH="$BASE_PATH/SatispayInStore/Modules/OpenSSL"
 
-        cd "$OPENSSL_PATH"
+    #     cd "$OPENSSL_PATH"
 
-        if [ -d Frameworks/OpenSSL.xcframework ] && [ -d "$MODULE_PATH" ]; then
-            exit 0
-        fi
+    #     if [ -d Frameworks/OpenSSL.xcframework ] && [ -d "$MODULE_PATH" ]; then
+    #         exit 0
+    #     fi
 
-        # ./build.sh
+    #     # ./build.sh
 
-        mkdir -p $MODULE_PATH
-        cp -R "$OPENSSL_PATH/Frameworks/OpenSSL.xcframework" "$MODULE_PATH/"
-    CMD
+    #     mkdir -p $MODULE_PATH
+    #     cp -R "$OPENSSL_PATH/Frameworks/OpenSSL.xcframework" "$MODULE_PATH/"
+    # CMD
 end

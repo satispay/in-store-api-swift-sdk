@@ -1,4 +1,0 @@
-[submodule "OpenSSL"]
-	path = OpenSSL
-url=https://github.com/dadocere/OpenSSL.git
-        ignore = dirty

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		35909A7DA7BD1290F447DEF2 /* Pods_SatispayInStore_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99CFC4085D725A9160111D8 /* Pods_SatispayInStore_iOS.framework */; };
+		8CC95228096D46001BD1D572 /* Pods_SatispayInStore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDA8269CE9BE8DC357F6F2 /* Pods_SatispayInStore_macOS.framework */; };
 		9749153A242D5EFB007FD83A /* ConsumersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97491539242D5EFB007FD83A /* ConsumersService.swift */; };
 		9749153C242DEF2E007FD83A /* ConsumersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749153B242DEF2E007FD83A /* ConsumersController.swift */; };
 		9749153D242DEF2E007FD83A /* ConsumersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9749153B242DEF2E007FD83A /* ConsumersController.swift */; };
@@ -33,8 +35,9 @@
 		97A715AE239FA60200799F2F /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
 		97E5B00C2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
-		A55FF82525CC2AEA00DD8F8B /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */; };
-		A55FF82625CC2AEA00DD8F8B /* OpenSSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5AFD8BD25CC720000B6B862 /* ProfileAcceptanceRequrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */; };
+		A5AFD8C125CC721A00B6B862 /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
+		C6F388E1141F8079529EE16E /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F62DEA9284451DCC49CA4BB /* Pods_Example.framework */; };
 		E80059791FB44D8C005E8DD6 /* DHController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059781FB44D8C005E8DD6 /* DHController+Context.swift */; };
 		E80059861FB45A8F005E8DD6 /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059851FB45A8E005E8DD6 /* BigInteger.swift */; };
 		E80059891FB45DBB005E8DD6 /* CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */; };
@@ -213,25 +216,9 @@
 		E8E344D22010C48E0049385F /* DHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93011FB20A1100E80816 /* DHService.swift */; };
 		E8E344D32010C48E0049385F /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E92FD1FB20A1100E80816 /* ProfileService.swift */; };
 		E8E344D42010C48E0049385F /* ShopsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84E93001FB20A1100E80816 /* ShopsService.swift */; };
-		E8E3AA802024AF5900732698 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3AA7E2024AF5900732698 /* libssl.a */; };
-		E8E3AA812024AF5900732698 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E3AA7F2024AF5900732698 /* libcrypto.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E80059A11FB46B0D005E8DD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E84E92AE1FB203A700E80816 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E80059991FB46A68005E8DD6;
-			remoteInfo = OpenSSL;
-		};
-		E89E0D7E2252098100A2D641 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E84E92AE1FB203A700E80816 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E80059991FB46A68005E8DD6;
-			remoteInfo = OpenSSL;
-		};
 		E8F02F451FC7328B0090F7DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E84E92AE1FB203A700E80816 /* Project object */;
@@ -253,20 +240,13 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A55FF82725CC2AEA00DD8F8B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A55FF82625CC2AEA00DD8F8B /* OpenSSL.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F62DEA9284451DCC49CA4BB /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		771972ABE910EAB2A31DC734 /* Pods-SatispayInStore-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatispayInStore-macOS.debug.xcconfig"; path = "Target Support Files/Pods-SatispayInStore-macOS/Pods-SatispayInStore-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7B741888368BDB0402835241 /* Pods-SatispayInStore-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatispayInStore-macOS.release.xcconfig"; path = "Target Support Files/Pods-SatispayInStore-macOS/Pods-SatispayInStore-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		961488E76AED9B4A8F2C8D92 /* Pods-SatispayInStore-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatispayInStore-iOS.release.xcconfig"; path = "Target Support Files/Pods-SatispayInStore-iOS/Pods-SatispayInStore-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		97491539242D5EFB007FD83A /* ConsumersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumersService.swift; sourceTree = "<group>"; };
 		9749153B242DEF2E007FD83A /* ConsumersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumersController.swift; sourceTree = "<group>"; };
 		9749153F242DF956007FD83A /* ConsumerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerResponse.swift; sourceTree = "<group>"; };
@@ -274,6 +254,10 @@
 		97A715AD239FA60200799F2F /* Acceptance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceptance.swift; sourceTree = "<group>"; };
 		97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMeRequest.swift; sourceTree = "<group>"; };
 		A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = SatispayInStore/Modules/OpenSSL/OpenSSL.xcframework; sourceTree = "<group>"; };
+		BF883F30B59ADF7FAD3AF7FC /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C1EDA8269CE9BE8DC357F6F2 /* Pods_SatispayInStore_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatispayInStore_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1D9DF47019CE6E45A793252 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		D912295F7154E6D43A3AD0C5 /* Pods-SatispayInStore-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SatispayInStore-iOS.debug.xcconfig"; path = "Target Support Files/Pods-SatispayInStore-iOS/Pods-SatispayInStore-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E80059781FB44D8C005E8DD6 /* DHController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DHController+Context.swift"; sourceTree = "<group>"; };
 		E80059851FB45A8E005E8DD6 /* BigInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInteger.swift; sourceTree = "<group>"; };
 		E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableOperation.swift; sourceTree = "<group>"; };
@@ -379,6 +363,7 @@
 		E8E3447D2010BF330049385F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8E3AA7E2024AF5900732698 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "OpenSSL/lib-macos/libssl.a"; sourceTree = "<group>"; };
 		E8E3AA7F2024AF5900732698 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "OpenSSL/lib-macos/libcrypto.a"; sourceTree = "<group>"; };
+		E99CFC4085D725A9160111D8 /* Pods_SatispayInStore_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatispayInStore_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,7 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A55FF82525CC2AEA00DD8F8B /* OpenSSL.xcframework in Frameworks */,
+				35909A7DA7BD1290F447DEF2 /* Pods_SatispayInStore_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				974A366024F7F361006CB5CD /* SatispayInStore.framework in Frameworks */,
+				C6F388E1141F8079529EE16E /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,14 +388,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8E3AA802024AF5900732698 /* libssl.a in Frameworks */,
-				E8E3AA812024AF5900732698 /* libcrypto.a in Frameworks */,
+				8CC95228096D46001BD1D572 /* Pods_SatispayInStore_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		871F6053AC4108A1CFD3FEDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF883F30B59ADF7FAD3AF7FC /* Pods-Example.debug.xcconfig */,
+				D1D9DF47019CE6E45A793252 /* Pods-Example.release.xcconfig */,
+				D912295F7154E6D43A3AD0C5 /* Pods-SatispayInStore-iOS.debug.xcconfig */,
+				961488E76AED9B4A8F2C8D92 /* Pods-SatispayInStore-iOS.release.xcconfig */,
+				771972ABE910EAB2A31DC734 /* Pods-SatispayInStore-macOS.debug.xcconfig */,
+				7B741888368BDB0402835241 /* Pods-SatispayInStore-macOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E80059841FB45A8E005E8DD6 /* BigInteger */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +432,9 @@
 				E8E3AA7E2024AF5900732698 /* libssl.a */,
 				E80059A61FB46CAF005E8DD6 /* libcrypto.a */,
 				E80059A51FB46CAF005E8DD6 /* libssl.a */,
+				2F62DEA9284451DCC49CA4BB /* Pods_Example.framework */,
+				E99CFC4085D725A9160111D8 /* Pods_SatispayInStore_iOS.framework */,
+				C1EDA8269CE9BE8DC357F6F2 /* Pods_SatispayInStore_macOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -462,6 +463,7 @@
 				E8C75FCB1FC6BC90001B5E7A /* Example */,
 				E84E92B81FB203A700E80816 /* Products */,
 				E80059A41FB46CAF005E8DD6 /* Frameworks */,
+				871F6053AC4108A1CFD3FEDD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -717,38 +719,20 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
-/* Begin PBXLegacyTarget section */
-		E80059991FB46A68005E8DD6 /* OpenSSL */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(SRCROOT)/SatispayInStore/Modules/OpenSSL";
-			buildConfigurationList = E800599A1FB46A68005E8DD6 /* Build configuration list for PBXLegacyTarget "OpenSSL" */;
-			buildPhases = (
-			);
-			buildToolPath = "$(SRCROOT)/OpenSSL-Scripts/build.sh";
-			buildWorkingDirectory = "$(SRCROOT)/OpenSSL";
-			dependencies = (
-			);
-			name = OpenSSL;
-			passBuildSettingsInEnvironment = 1;
-			productName = OpenSSL;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		E84E92B61FB203A700E80816 /* SatispayInStore-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E84E92BF1FB203A700E80816 /* Build configuration list for PBXNativeTarget "SatispayInStore-iOS" */;
 			buildPhases = (
+				50BAEA231D474EAB6BC5D24D /* [CP] Check Pods Manifest.lock */,
 				E84E92B21FB203A700E80816 /* Sources */,
 				E84E92B31FB203A700E80816 /* Frameworks */,
 				E84E92B41FB203A700E80816 /* Headers */,
 				E84E92B51FB203A700E80816 /* Resources */,
-				A55FF82725CC2AEA00DD8F8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E80059A21FB46B0D005E8DD6 /* PBXTargetDependency */,
 			);
 			name = "SatispayInStore-iOS";
 			productName = SatispayBusinessProtocolCore;
@@ -759,10 +743,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8C75FDB1FC6BC91001B5E7A /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				397EC28C4F845CA9A88FC6DC /* [CP] Check Pods Manifest.lock */,
 				E8C75FC61FC6BC90001B5E7A /* Sources */,
 				E8C75FC71FC6BC90001B5E7A /* Frameworks */,
 				E8C75FC81FC6BC90001B5E7A /* Resources */,
 				974A366224F7F361006CB5CD /* Embed Frameworks */,
+				4AAD850C38C2A6630855BF30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -778,6 +764,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8E344812010BF330049385F /* Build configuration list for PBXNativeTarget "SatispayInStore-macOS" */;
 			buildPhases = (
+				F621FBA261754C6C1977CD74 /* [CP] Check Pods Manifest.lock */,
 				E8E344752010BF330049385F /* Sources */,
 				E8E344762010BF330049385F /* Frameworks */,
 				E8E344772010BF330049385F /* Headers */,
@@ -786,7 +773,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E89E0D7F2252098100A2D641 /* PBXTargetDependency */,
 			);
 			name = "SatispayInStore-macOS";
 			productName = "SatispayInStore-macOS";
@@ -803,10 +789,6 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Pierluigi D'Andrea";
 				TargetAttributes = {
-					E80059991FB46A68005E8DD6 = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-					};
 					E84923D51FC58F500037C6CD = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -843,7 +825,6 @@
 			targets = (
 				E84E92B61FB203A700E80816 /* SatispayInStore-iOS */,
 				E8E344792010BF330049385F /* SatispayInStore-macOS */,
-				E80059991FB46A68005E8DD6 /* OpenSSL */,
 				E84923D51FC58F500037C6CD /* Linting */,
 				E8C75FC91FC6BC90001B5E7A /* Example */,
 			);
@@ -878,6 +859,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		397EC28C4F845CA9A88FC6DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AAD850C38C2A6630855BF30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50BAEA231D474EAB6BC5D24D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SatispayInStore-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E84923D91FC58F550037C6CD /* Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -891,6 +934,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    cd \"${PROJECT_DIR}\"\n    swiftlint lint --config \".swiftlint.yml\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F621FBA261754C6C1977CD74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SatispayInStore-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1015,6 +1080,7 @@
 				E8E344A92010C4850049385F /* AnalyticsController.swift in Sources */,
 				E8E344B82010C4850049385F /* PaymentsController+Update.swift in Sources */,
 				E8E344BA2010C48A0049385F /* DailyClosureResponse.swift in Sources */,
+				A5AFD8C125CC721A00B6B862 /* Acceptance.swift in Sources */,
 				E8E344972010C4740049385F /* JSONDecoder+Defaults.swift in Sources */,
 				E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */,
 				E8E344BD2010C48A0049385F /* DHChallengeResponse.swift in Sources */,
@@ -1046,6 +1112,7 @@
 				E8E344A12010C47B0049385F /* NetworkService.swift in Sources */,
 				E8E344D22010C48E0049385F /* DHService.swift in Sources */,
 				E8E344942010C4710049385F /* KeychainEntry.swift in Sources */,
+				A5AFD8BD25CC720000B6B862 /* ProfileAcceptanceRequrest.swift in Sources */,
 				E8AFC61422083B0A003A1839 /* Picture.swift in Sources */,
 				E8E344B52010C4850049385F /* ShopsController.swift in Sources */,
 				E8E344AE2010C4850049385F /* DHController+Challenge.swift in Sources */,
@@ -1102,16 +1169,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E80059A21FB46B0D005E8DD6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E80059991FB46A68005E8DD6 /* OpenSSL */;
-			targetProxy = E80059A11FB46B0D005E8DD6 /* PBXContainerItemProxy */;
-		};
-		E89E0D7F2252098100A2D641 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E80059991FB46A68005E8DD6 /* OpenSSL */;
-			targetProxy = E89E0D7E2252098100A2D641 /* PBXContainerItemProxy */;
-		};
 		E8F02F461FC7328B0090F7DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E84E92B61FB203A700E80816 /* SatispayInStore-iOS */;
@@ -1139,33 +1196,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E800599B1FB46A68005E8DD6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 3KU6KJU4K4;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		E800599C1FB46A68005E8DD6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 3KU6KJU4K4;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		E84923D61FC58F500037C6CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1292,8 +1322,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1302,6 +1331,7 @@
 		};
 		E84E92C01FB203A700E80816 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D912295F7154E6D43A3AD0C5 /* Pods-SatispayInStore-iOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1314,11 +1344,7 @@
 				INFOPLIST_FILE = SatispayInStore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-iOS";
 				PRODUCT_NAME = SatispayInStore;
 				SKIP_INSTALL = YES;
@@ -1329,6 +1355,7 @@
 		};
 		E84E92C11FB203A700E80816 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 961488E76AED9B4A8F2C8D92 /* Pods-SatispayInStore-iOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1341,11 +1368,7 @@
 				INFOPLIST_FILE = SatispayInStore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-iOS";
 				PRODUCT_NAME = SatispayInStore;
 				SKIP_INSTALL = YES;
@@ -1356,16 +1379,14 @@
 		};
 		E8C75FD91FC6BC91001B5E7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF883F30B59ADF7FAD3AF7FC /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satispay.SatispayInStore.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1376,16 +1397,14 @@
 		};
 		E8C75FDA1FC6BC91001B5E7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1D9DF47019CE6E45A793252 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satispay.SatispayInStore.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1396,6 +1415,7 @@
 		};
 		E8E3447F2010BF330049385F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 771972ABE910EAB2A31DC734 /* Pods-SatispayInStore-macOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1406,27 +1426,21 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/macOS/OpenSSL";
 				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenSSL/lib-macos";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/macOS";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		E8E344802010BF330049385F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B741888368BDB0402835241 /* Pods-SatispayInStore-macOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1437,21 +1451,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SatispayInStore/Modules/macOS/OpenSSL";
 				INFOPLIST_FILE = "SatispayInStore-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/OpenSSL/lib-macos";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.satispay.InStore-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/SatispayInStore/Modules/macOS";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1459,15 +1466,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E800599A1FB46A68005E8DD6 /* Build configuration list for PBXLegacyTarget "OpenSSL" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E800599B1FB46A68005E8DD6 /* Debug */,
-				E800599C1FB46A68005E8DD6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		E84923D81FC58F500037C6CD /* Build configuration list for PBXAggregateTarget "Linting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
