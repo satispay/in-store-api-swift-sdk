@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
             exit 0
         fi
 
-        ./build.sh
+        # ./build.sh
 
         mkdir -p $MODULE_PATH
         cp -R "$OPENSSL_PATH/Frameworks/OpenSSL.xcframework" "$MODULE_PATH/"
