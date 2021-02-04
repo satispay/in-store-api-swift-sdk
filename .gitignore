@@ -20,5 +20,5 @@ Build/*
 *.xcworkspace/xcuserdata
 *.xcodeproj/xcuserdata
 screenshots
-*/Modules/iOS/OpenSSL/openssl/
-*/Modules/macOS/OpenSSL/openssl/
+*/Modules/OpenSSL/
+SatispayInStore/Modules/OpenSSL/
