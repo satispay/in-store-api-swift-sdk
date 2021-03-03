@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SatispayInStore'
-  s.version          = '0.1.14'
+  s.version          = '0.1.15'
   s.summary          = 'Satispay inStore API framework'
   s.description      = <<-DESC
     You can use our API to access Satispay API endpoints, which can get information on received payments, pending ones and manage proposal of payments, besides many other operations.
@@ -11,7 +11,9 @@ Pod::Spec.new do |s|
   s.author           = { 'Pierluigi D\'Andrea' => 'pierluigi.dandrea@satispay.com' }
   s.source           = { :git => 'https://github.com/satispay/in-store-api-swift-sdk.git', :tag => s.version.to_s, :submodules => true }
 
-  s.ios.deployment_target = '8.0'
+  s.swift_version = '4.2'
+
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'
 
   s.source_files = 'SatispayInStore/**/*.swift'
