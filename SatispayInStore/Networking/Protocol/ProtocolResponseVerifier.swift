@@ -153,7 +153,7 @@ struct ProtocolResponseVerifier {
     private func validateDigest(_ response: HTTPURLResponse, data: Data) throws {
 
         //  Check whether the digest can be verified
-        guard let digest = response.allHeaderFields["digest"] as? String, digest.components(separatedBy: "=").count > 1,
+        guard let digest = response.value(forHeaderField: "digest") as? String, digest.components(separatedBy: "=").count > 1,
             let digestAlgorithm = digest.components(separatedBy: "=").first?.uppercased() else {
 
             throw ProtocolResponseVerifierError.malformedResponse

@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9761A01B25EFF94C00C54FA3 /* HTTPResponse+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761A01A25EFF94C00C54FA3 /* HTTPResponse+Headers.swift */; };
+		9761A01C25EFF94C00C54FA3 /* HTTPResponse+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761A01A25EFF94C00C54FA3 /* HTTPResponse+Headers.swift */; };
 		E80059791FB44D8C005E8DD6 /* DHController+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059781FB44D8C005E8DD6 /* DHController+Context.swift */; };
 		E80059861FB45A8F005E8DD6 /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059851FB45A8E005E8DD6 /* BigInteger.swift */; };
 		E80059891FB45DBB005E8DD6 /* CancellableOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */; };
@@ -224,6 +226,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9761A01A25EFF94C00C54FA3 /* HTTPResponse+Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPResponse+Headers.swift"; sourceTree = "<group>"; };
 		E80059781FB44D8C005E8DD6 /* DHController+Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DHController+Context.swift"; sourceTree = "<group>"; };
 		E80059851FB45A8E005E8DD6 /* BigInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInteger.swift; sourceTree = "<group>"; };
 		E80059881FB45DBB005E8DD6 /* CancellableOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableOperation.swift; sourceTree = "<group>"; };
@@ -558,6 +561,7 @@
 				E84E93611FB2275700E80816 /* JSONDecoder+Defaults.swift */,
 				E84E93601FB2275700E80816 /* JSONEncoder+Defaults.swift */,
 				E8DE9C3C1FBDC87B00B094D2 /* NetworkService+Notification.swift */,
+				9761A01A25EFF94C00C54FA3 /* HTTPResponse+Headers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -871,6 +875,7 @@
 				E84E93321FB20A1200E80816 /* DHService.swift in Sources */,
 				E84E93131FB20A1100E80816 /* DHEncryptedResponse.swift in Sources */,
 				E8C55F341FB342E700B20F93 /* HMAC.swift in Sources */,
+				9761A01B25EFF94C00C54FA3 /* HTTPResponse+Headers.swift in Sources */,
 				E8C55F411FB363BC00B20F93 /* HTTPRequest.swift in Sources */,
 				E84E930F1FB20A1100E80816 /* DHExchangeRequest.swift in Sources */,
 				E84E931D1FB20A1100E80816 /* TransactionsController+UpdateState.swift in Sources */,
@@ -955,6 +960,7 @@
 				E8E344A52010C47E0049385F /* ProtocolRequestSigner.swift in Sources */,
 				E8E344BD2010C48A0049385F /* DHChallengeResponse.swift in Sources */,
 				E8E344842010C4550049385F /* EnvironmentKeychainConfig.swift in Sources */,
+				9761A01C25EFF94C00C54FA3 /* HTTPResponse+Headers.swift in Sources */,
 				E8E3448A2010C4660049385F /* KeyDerivation.swift in Sources */,
 				E8E344992010C4740049385F /* NetworkService+Notification.swift in Sources */,
 				E8E344CF2010C48E0049385F /* AnalyticsService.swift in Sources */,
