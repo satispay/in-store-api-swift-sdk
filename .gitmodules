@@ -1,4 +1,0 @@
-[submodule "OpenSSL"]
-	path = OpenSSL
-url=https://github.com/satispay/OpenSSL
-        ignore = dirty

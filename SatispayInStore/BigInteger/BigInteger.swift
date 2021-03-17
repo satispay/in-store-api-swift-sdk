@@ -13,19 +13,20 @@ import OpenSSL
 public class BigInteger {
 
     /// Under the hood `BigInteger` is represented as an OpenSSL `BIGNUM`.
-    private(set) var representation: UnsafeMutablePointer<BIGNUM>
+    private(set) var representation: OpaquePointer
 
     /// String representation as a decimal number.
     public var string: String? {
 
-        var number = representation
+        let number = representation
 
         guard let chars = BN_bn2dec(number) else {
             return nil
         }
 
         defer {
-            CRYPTO_free(chars)
+            free(chars)
+//            CRYPTO_free(chars)
         }
 
         return String(cString: chars)
@@ -33,7 +34,7 @@ public class BigInteger {
     }
 
     /// Initializes a BigInteger with its BIGNUM representation.
-    public init?(_ bigNum: UnsafePointer<BIGNUM>) {
+    public init?(_ bigNum: OpaquePointer?) {
 
         guard let dup = BN_dup(bigNum) else {
             return nil
@@ -45,8 +46,7 @@ public class BigInteger {
 
     /// Initializes a BigInteger with its String representation.
     public init?(string: String) {
-
-        let value = string.utf8CString.withUnsafeBufferPointer { pointer -> UnsafeMutablePointer<BIGNUM>? in
+        let value = string.utf8CString.withUnsafeBufferPointer { pointer -> OpaquePointer? in
 
             var num = BN_new()
 
@@ -80,7 +80,7 @@ public class BigInteger {
     ///
     /// - parameter number:     Number to increment
     /// - parameter increment:  Increment amount
-    public static func + (number: BigInteger, increment: UInt32) -> BigInteger? {
+    public static func + (number: BigInteger, increment: UInt) -> BigInteger? {
 
         let representation = BN_dup(number.representation)
 
