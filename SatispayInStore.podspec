@@ -16,7 +16,9 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
 
   s.source_files = 'SatispayInStore/**/*.swift'
-  s.dependency 'OpenSSL-Universal'
+  #s.dependency 'OpenSSL-Universal'
+
+  s.vendored_frameworks = 'Frameworks/OpenSSL.xcframework'
 
   s.pod_target_xcconfig = {
       'SWIFT_VERSION' => '5.0'
