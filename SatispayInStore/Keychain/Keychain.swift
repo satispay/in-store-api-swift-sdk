@@ -98,6 +98,13 @@ public class Keychain {
             updateAttributes[String(kSecAttrAccessGroup)] = Keychain.accessGroup
             #endif
 
+            #if os(macOS)
+            if Keychain.accessGroup != nil {
+                updateAttributes[String(kSecAttrAccessGroup)] = Keychain.accessGroup
+                updateAttributes[String(kSecUseDataProtectionKeychain)] = kCFBooleanTrue
+            }
+            #endif
+
             performAtomically {
                 status = SecItemUpdate(searchAttributes as CFDictionary,
                                        updateAttributes as CFDictionary)
@@ -109,6 +116,13 @@ public class Keychain {
             descriptor[kSecValueData as String] = data as AnyObject
             #if os(iOS)
             descriptor[String(kSecAttrAccessGroup)] = accessGroup
+            #endif
+
+            #if os(macOS)
+            if Keychain.accessGroup != nil {
+                descriptor[String(kSecAttrAccessGroup)] = Keychain.accessGroup
+                descriptor[String(kSecUseDataProtectionKeychain)] = kCFBooleanTrue
+            }
             #endif
 
             performAtomically {
