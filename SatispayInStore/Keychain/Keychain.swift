@@ -119,7 +119,7 @@ public class Keychain {
             #endif
 
             #if os(macOS)
-            if Keychain.accessGroup != nil {
+            if #available(macOS 10.15, *), Keychain.accessGroup != nil {
                 descriptor[String(kSecAttrAccessGroup)] = Keychain.accessGroup
                 descriptor[String(kSecUseDataProtectionKeychain)] = kCFBooleanTrue
             }
