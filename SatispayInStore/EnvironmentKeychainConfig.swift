@@ -62,7 +62,7 @@ public struct EnvironmentKeychainConfig {
 
     }
 
-    public func migrate(to keychainConfig: EnvironmentKeychainConfig) throws {
+    public func migrate(to keychainConfig: EnvironmentKeychainConfig, in accessGroup: String? = nil) throws {
         
         guard self.containsData else {
             throw KeychainError.notFound
@@ -73,9 +73,11 @@ public struct EnvironmentKeychainConfig {
         let keyId: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.keyId)
         let sequenceNumber: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.sequenceNumber)
         
+        Keychain.accessGroup = accessGroup
         try Keychain.insert(entry: keychainConfig.kSafe, data: kSafe)
         try Keychain.insert(entry: keychainConfig.kMaster, data: kMaster)
         try Keychain.insert(entry: keychainConfig.keyId, data: keyId)
         try Keychain.insert(entry: keychainConfig.sequenceNumber, data: sequenceNumber)
+        Keychain.accessGroup = nil
     }
 }
