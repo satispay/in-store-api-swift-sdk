@@ -99,7 +99,7 @@ public class Keychain {
             #endif
 
             #if os(macOS)
-            if Keychain.accessGroup != nil {
+            if #available(macOS 10.15, *), Keychain.accessGroup != nil {
                 updateAttributes[String(kSecAttrAccessGroup)] = Keychain.accessGroup
                 updateAttributes[String(kSecUseDataProtectionKeychain)] = kCFBooleanTrue
             }
@@ -175,9 +175,9 @@ public class Keychain {
         var status: OSStatus = errSecSuccess
 
         var searchDescriptor = descriptor
-        #if os(iOS)
-        searchDescriptor[String(kSecAttrAccessGroup)] = accessGroup
-        #endif
+        if accessGroup != nil {
+            searchDescriptor[String(kSecAttrAccessGroup)] = accessGroup
+        }
 
         performAtomically {
             status = SecItemCopyMatching(searchDescriptor as CFDictionary, &object)

@@ -56,7 +56,9 @@ extension Keychain {
         descriptor[kSecReturnPersistentRef as String] = kCFBooleanTrue
         descriptor[String(kSecAttrAccessGroup)] = accessGroup
         #if os(macOS)
-        descriptor[String(kSecUseDataProtectionKeychain)] = accessGroup != nil ? kCFBooleanTrue : kCFBooleanFalse
+        if #available(macOS 10.15, *) {
+            descriptor[String(kSecUseDataProtectionKeychain)] = accessGroup != nil ? kCFBooleanTrue : kCFBooleanFalse
+        }
         #endif
         
         performAtomically {
