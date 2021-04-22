@@ -62,4 +62,20 @@ public struct EnvironmentKeychainConfig {
 
     }
 
+    public func migrate(to keychainConfig: EnvironmentKeychainConfig) throws {
+        
+        guard self.containsData else {
+            throw KeychainError.notFound
+        }
+
+        let kSafe: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.kSafe)
+        let kMaster: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.kMaster)
+        let keyId: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.keyId)
+        let sequenceNumber: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.sequenceNumber)
+        
+        try Keychain.insert(entry: keychainConfig.kSafe, data: kSafe)
+        try Keychain.insert(entry: keychainConfig.kMaster, data: kMaster)
+        try Keychain.insert(entry: keychainConfig.keyId, data: keyId)
+        try Keychain.insert(entry: keychainConfig.sequenceNumber, data: sequenceNumber)
+    }
 }
