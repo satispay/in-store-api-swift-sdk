@@ -55,10 +55,10 @@ public struct EnvironmentKeychainConfig {
     /// Deletes all the entries, except `publicKey`, from the keychain.
     public func clear() {
 
-        Keychain.delete(entry: SatispayInStoreConfig.environment.keychain.kSafe)
-        Keychain.delete(entry: SatispayInStoreConfig.environment.keychain.kMaster)
-        Keychain.delete(entry: SatispayInStoreConfig.environment.keychain.keyId)
-        Keychain.delete(entry: SatispayInStoreConfig.environment.keychain.sequenceNumber)
+        Keychain.delete(entry: self.kSafe)
+        Keychain.delete(entry: self.kMaster)
+        Keychain.delete(entry: self.keyId)
+        Keychain.delete(entry: self.sequenceNumber)
 
     }
 
@@ -68,16 +68,17 @@ public struct EnvironmentKeychainConfig {
             throw KeychainError.notFound
         }
 
-        let kSafe: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.kSafe)
-        let kMaster: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.kMaster)
-        let keyId: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.keyId)
-        let sequenceNumber: Data = try Keychain.find(entry: SatispayInStoreConfig.environment.keychain.sequenceNumber)
+        let kSafe: Data = try Keychain.find(entry: self.kSafe)
+        let kMaster: Data = try Keychain.find(entry: self.kMaster)
+        let keyId: Data = try Keychain.find(entry: self.keyId)
+        let sequenceNumber: Data = try Keychain.find(entry: self.sequenceNumber)
         
+        let oldGroup = Keychain.accessGroup
         Keychain.accessGroup = accessGroup
         try Keychain.insert(entry: keychainConfig.kSafe, data: kSafe)
         try Keychain.insert(entry: keychainConfig.kMaster, data: kMaster)
         try Keychain.insert(entry: keychainConfig.keyId, data: keyId)
         try Keychain.insert(entry: keychainConfig.sequenceNumber, data: sequenceNumber)
-        Keychain.accessGroup = nil
+        Keychain.accessGroup = oldGroup
     }
 }
