@@ -256,7 +256,8 @@ extension MainViewController {
                                              parentPaymentUid: transaction.id,
                                              consumerUid: nil,
                                              paymentDescription: nil,
-                                             idempotencyKey: UUID().uuidString) { [weak self] (_, error) in
+                                             idempotencyKey: UUID().uuidString,
+                                             paymentMethods: nil) { [weak self] (_, error) in
 
             guard error == nil else {
                 self?.failRefund(of: transaction)

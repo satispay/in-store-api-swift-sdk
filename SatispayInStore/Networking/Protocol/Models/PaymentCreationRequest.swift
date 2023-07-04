@@ -19,6 +19,7 @@ public struct PaymentCreationRequest: Encodable {
     public let parentPaymentUid: String?
     public let consumerUid: String?
     public let paymentDescription: String?
+    public let paymentMethods: PaymentMethods?
 
     enum CodingKeys: String, CodingKey {
         case flow
@@ -30,9 +31,10 @@ public struct PaymentCreationRequest: Encodable {
         case parentPaymentUid = "parent_payment_uid"
         case consumerUid = "consumer_uid"
         case paymentDescription = "description"
+        case paymentMethods = "payment_methods"
     }
 
-    public init(flow: Flow, amountUnit: Int, currency: String, expirationDate: Date?, metadata: Metadata?, callbackURL: URL?, parentPaymentUid: String?, consumerUid: String?, paymentDescription: String?) {
+    public init(flow: Flow, amountUnit: Int, currency: String, expirationDate: Date?, metadata: Metadata?, callbackURL: URL?, parentPaymentUid: String?, consumerUid: String?, paymentDescription: String?, paymentMethods: PaymentMethods?) {
         self.flow = flow
         self.amountUnit = amountUnit
         self.currency = currency
@@ -42,6 +44,7 @@ public struct PaymentCreationRequest: Encodable {
         self.parentPaymentUid = parentPaymentUid
         self.consumerUid = consumerUid
         self.paymentDescription = paymentDescription
+        self.paymentMethods = paymentMethods
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -57,6 +60,7 @@ public struct PaymentCreationRequest: Encodable {
         try container.encodeIfPresent(parentPaymentUid, forKey: .parentPaymentUid)
         try container.encodeIfPresent(consumerUid, forKey: .consumerUid)
         try container.encodeIfPresent(paymentDescription, forKey: .paymentDescription)
+        try container.encodeIfPresent(paymentMethods, forKey: .paymentMethods)
     }
 }
 

@@ -17,7 +17,7 @@ extension PaymentsController {
     ///   - action: Update action to perform.
     public func updatePayment(id: String,
                               action: PaymentUpdateAction,
-                              paymentMethods: PaymentUpdateRequest.PaymentMethods? = nil,
+                              paymentMethods: PaymentMethods? = nil,
                               completionHandler: @escaping CompletionHandler<Payment>) -> CancellableOperation {
         
         return PaymentsService.updatePayment(id: id, request: .init(action: action, paymentMethods: paymentMethods))

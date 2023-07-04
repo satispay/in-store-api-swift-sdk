@@ -35,6 +35,8 @@
 		97A715AE239FA60200799F2F /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		97E5B00B2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
 		97E5B00C2430F89E00FC26A1 /* ProfileMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */; };
+		A59795BA2A547C51006B46ED /* PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59795B92A547C51006B46ED /* PaymentMethods.swift */; };
+		A59795BB2A547C51006B46ED /* PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59795B92A547C51006B46ED /* PaymentMethods.swift */; };
 		A5AFD8BD25CC720000B6B862 /* ProfileAcceptanceRequrest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AB239FA08100799F2F /* ProfileAcceptanceRequrest.swift */; };
 		A5AFD8C125CC721A00B6B862 /* Acceptance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A715AD239FA60200799F2F /* Acceptance.swift */; };
 		C6F388E1141F8079529EE16E /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F62DEA9284451DCC49CA4BB /* Pods_Example.framework */; };
@@ -254,6 +256,7 @@
 		97A715AD239FA60200799F2F /* Acceptance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceptance.swift; sourceTree = "<group>"; };
 		97E5B00A2430F89E00FC26A1 /* ProfileMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMeRequest.swift; sourceTree = "<group>"; };
 		A55FF82425CC2AEA00DD8F8B /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = SatispayInStore/Modules/OpenSSL/OpenSSL.xcframework; sourceTree = "<group>"; };
+		A59795B92A547C51006B46ED /* PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethods.swift; sourceTree = "<group>"; };
 		BF883F30B59ADF7FAD3AF7FC /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C1EDA8269CE9BE8DC357F6F2 /* Pods_SatispayInStore_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SatispayInStore_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D9DF47019CE6E45A793252 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -544,6 +547,7 @@
 				E84E92D81FB20A1100E80816 /* PaymentsListRequest.swift */,
 				E8026B6F21EE298800E99599 /* PaymentUpdateAction.swift */,
 				E84E92DB1FB20A1100E80816 /* PaymentUpdateRequest.swift */,
+				A59795B92A547C51006B46ED /* PaymentMethods.swift */,
 				E84E92DA1FB20A1100E80816 /* ServerErrorResponse.swift */,
 				E84E92D71FB20A1100E80816 /* ShopLocationUpdateRequest.swift */,
 				E84E92E41FB20A1100E80816 /* StartedRequest.swift */,
@@ -973,6 +977,7 @@
 				E84E93241FB20A1100E80816 /* AnalyticsController.swift in Sources */,
 				E84E93181FB20A1100E80816 /* DeviceUpdateRequest.swift in Sources */,
 				E8C55F3D1FB3436400B20F93 /* EnvironmentConfig.swift in Sources */,
+				A59795BA2A547C51006B46ED /* PaymentMethods.swift in Sources */,
 				E8C55F3A1FB342E700B20F93 /* Keychain.swift in Sources */,
 				E84E93271FB20A1100E80816 /* DHController+Challenge.swift in Sources */,
 				E84E931F1FB20A1100E80816 /* DHController+Exchange.swift in Sources */,
@@ -1119,6 +1124,7 @@
 				E8E344AF2010C4850049385F /* DHController+Exchange.swift in Sources */,
 				E8E344A42010C47E0049385F /* ProtocolError.swift in Sources */,
 				E8E344912010C4710049385F /* Keychain.swift in Sources */,
+				A59795BB2A547C51006B46ED /* PaymentMethods.swift in Sources */,
 				E8E344C32010C48A0049385F /* DHVerificationResponse.swift in Sources */,
 				E8E344D42010C48E0049385F /* ShopsService.swift in Sources */,
 				E8E344AC2010C4850049385F /* DHController.swift in Sources */,
