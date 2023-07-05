@@ -12,7 +12,7 @@ public struct PaymentUpdateRequest: Encodable {
     
     enum CodingKeys: String, CodingKey {
         case action
-        case paymentMethods = "payment_methods_options"
+        case paymentMethods = "payment_method_options"
     }
 
     let action: PaymentUpdateAction
