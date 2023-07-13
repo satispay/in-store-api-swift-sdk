@@ -21,6 +21,7 @@ public struct Profile: Decodable {
     public let costCentre: String?
     public let qrCodeIdentifier: String?
     public let rawModel: String?
+    public let paymentMethods: PaymentMethods?
 
     public let businessAppSettings: BusinessAppSettings?
     
@@ -46,6 +47,7 @@ public struct Profile: Decodable {
         case qrCodeIdentifier = "qr_code_identifier"
         case rawModel = "model"
         case businessAppSettings = "business_app_settings"
+        case paymentMethods = "payment_methods"
     }
 
     public init(from decoder: Decoder) throws {
@@ -64,6 +66,7 @@ public struct Profile: Decodable {
         qrCodeIdentifier = try? container.decode(String.self, forKey: .qrCodeIdentifier)
         rawModel = try container.decode(String.self, forKey: .rawModel)
         businessAppSettings = try? container.decode(BusinessAppSettings.self, forKey: .businessAppSettings)
+        paymentMethods = try? container.decode(PaymentMethods.self, forKey: .paymentMethods)
     }
 }
 
@@ -148,5 +151,20 @@ public extension Profile {
         enum CodingKeys: String, CodingKey {
             case paymentRequest = "payment_request"
         }
+    }
+    
+    struct PaymentMethods: Decodable {
+        
+        public let isMealVoucherEnabled: Bool
+        
+        enum CodingKeys: String, CodingKey {
+            case isMealVoucherEnabled = "meal_voucher"
+        }
+        
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.isMealVoucherEnabled = (try? container.decode(Bool.self, forKey: .isMealVoucherEnabled)) ?? false
+        }
+        
     }
 }
