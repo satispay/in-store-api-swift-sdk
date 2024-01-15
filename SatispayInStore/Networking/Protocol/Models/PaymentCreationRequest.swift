@@ -31,7 +31,7 @@ public struct PaymentCreationRequest: Encodable {
         case parentPaymentUid = "parent_payment_uid"
         case consumerUid = "consumer_uid"
         case paymentDescription = "description"
-        case paymentMethods = "payment_methods"
+        case paymentMethods = "payment_method_options"
     }
 
     public init(flow: Flow, amountUnit: Int, currency: String, expirationDate: Date?, metadata: Metadata?, callbackURL: URL?, parentPaymentUid: String?, consumerUid: String?, paymentDescription: String?, paymentMethods: PaymentMethods?) {
