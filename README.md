@@ -1,5 +1,7 @@
 # Satispay InStore client
 
+This project is DEPRECATED. Please explore alternative integration options available at: [Satispay Developer Documentation.](https://developers.satispay.com/docs/welcome)
+
 This project provides an example iOS application using the Satispay InStore framework to interact with the Satispay in store API.
 
 More information about the API can be retrived in their [documentation](https://s3-eu-west-1.amazonaws.com/docs.satispay.com/index.html#instore-api).
